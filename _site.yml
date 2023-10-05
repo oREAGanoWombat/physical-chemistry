@@ -3,7 +3,20 @@ output_dir: "docs"
 navbar:
   title: "Physical Chemistry Guidebook"
   left:
-    - text: "Home"
-      href: index.html
     - text: "Ideal Gas Law"
       href: ideal-gas.html
+    - text: "First Law of Thermodynamics"
+      href: first-law.html
+    - text: "Gas Expansion"
+      href: gas-expansion.html
+      menu: 
+        - text: "Irreversible"
+          href: irreversible-expansion.html
+        - text: "Reversible"
+          href: reversible-expansion.html
+        - text: "Adiabatic"
+          href: adiabatic-expansion.html
+        - text: "Isochoric"
+          href: isochoric-expansion.html
+        - text: "Isothermal"
+          href: isothermal-expansion.html
