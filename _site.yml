@@ -1,0 +1,7 @@
+name: "physical-chemistry"
+output_dir: "_site"
+navbar:
+  title: "Physical Chemistry Guidebook"
+  left:
+    - text: "Ideal Gas Law"
+      href: ideal-gas.html
