@@ -11,12 +11,12 @@
 
 
 
-<title>Physical Chemistry Guidebook</title>
+<title> First Law of Thermodynamics </title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,8 +30,6 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -42,16 +40,6 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -230,7 +218,7 @@ $(document).ready(function () {
 
 
 
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
@@ -246,7 +234,7 @@ $(document).ready(function () {
   <a href="ideal-gas.html">Ideal Gas Law</a>
 </li>
 <li>
-  <a href="first-law.html">First Law of Thermodynamics</a>
+  <a href="first-law.html">1st Law of Thermodynamics</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -284,12 +272,172 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Physical Chemistry Guidebook</h1>
+<h1 class="title toc-ignore"><center><br />
+First Law of Thermodynamics<br />
+<center></h1>
 
 </div>
 
 
+<hr />
+<div id="work-and-heat" class="section level3">
+<h3>Work and Heat</h3>
+<div id="james-p.-joule-1818-1889" class="section level4">
+<h4>James P. Joule (1818-1889)</h4>
+<ul>
+<li>Joule was one of the pioneers of modern thermodynamics.</li>
+<li>Among his experiments, Joule attempted to measure the effect of work
+on the temperature of water.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="the-first-law-of-thermodynamics" class="section level3">
+<h3>The First Law of Thermodynamics</h3>
+<div class="whitebox">
+<div class="center">
+<p>The capacity of a system to do work is increased by heating the
+system or doing work on it.</p>
+</div>
+</div>
+<ul>
+<li>The first law translates to <span class="math display">\[\Delta
+{U}={q}+{w}\]</span> <span
+class="math display">\[{dU}={dq}+{dw}\]</span></li>
+</ul>
+<hr />
+</div>
+<div id="heat" class="section level3">
+<h3>Heat</h3>
+<ul>
+<li>Heat is the flow of energy that, in the absence of other changes,
+will change the temperature of the system.</li>
+<li><strong>Endothermic</strong>: heat flows into the system (<span
+class="math inline">\(q_{system}&gt;0\)</span>)</li>
+<li><strong>Exothermic</strong>: heat flows out of the system (<span
+class="math inline">\(q_{system}&lt;0\)</span>)</li>
+<li>An infinitesimal amount of heat flowing can be related to the
+temperature change as <span class="math display">\[{dq}={CdT}\]</span>
+where <span class="math inline">\(C\)</span> is the heat capacity</li>
+</ul>
+<div class="whitebox">
+<p><strong>Example 3.1</strong></p>
+<p>How much energy is needed to raise the temperature of <span
+class="math inline">\(5.0g\)</span> of water from <span
+class="math inline">\(21.0^{o}C\)</span> to <span
+class="math inline">\(25.0^{o}C\)</span>?</p>
+</div>
+<div id="side-note-partial-derivative" class="section level4">
+<h4>Side Note: Partial Derivative</h4>
+<ul>
+<li>The ideal gas law tells us that <span
+class="math display">\[{P(V.n.T)}=\frac{nRT}{V}\]</span></li>
+<li>How do we calculate the infinitesimal change in the pressure (<span
+class="math inline">\(dP\)</span>) if all the variable can change?</li>
+<li>The infinitesimal change in any function can be calculated as <span
+class="math display">\[{df}=\sum_{i}\left( \frac{\delta f}{\delta x_{i}}
+\right )_{x_{j}\neq {i}}{dx}_{i}\]</span></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="work" class="section level3">
+<h3>Work</h3>
+<ul>
+<li>Work can take various forms, some of which we have already spoken
+about<br />
 
+<center>
+<strong>Type of Work Displacement Resistance</strong>
+<center></li>
+<li>Expansion: <span
+class="math display">\[{dw}=-P_{ext}{dV}\]</span></li>
+<li>Electrical: <span class="math display">\[{dw}=-W{dQ}\]</span></li>
+<li>Extension: <span class="math display">\[{dw}={TdL}\]</span></li>
+<li>Stretching: <span class="math display">\[{dw}={sdA}\]</span></li>
+</ul>
+<div class="whitebox">
+<p><strong>Example 3.2</strong></p>
+<p>What is the work done by <span
+class="math inline">\(1.00{mol}\)</span> of an ideal gas expanding from
+a volume of <span class="math inline">\(22.4L\)</span> to a volume of
+<span class="math inline">\(44.8L\)</span> against a constant external
+pressure of <span class="math inline">\(0.500{atm}\)</span>?</p>
+</div>
+<hr />
+<center>
+<h2>
+<b> <mark> Reversible and Irreversible Pathways </mark> </b>
+</h2>
+</center>
+</div>
+<div id="reversible-gas-expansions" class="section level3">
+<h3>Reversible Gas Expansions</h3>
+<ul>
+<li>Imagine a gas in a cylinder (with a piston) where the pressure of
+the gas and the external pressure are the same.</li>
+<li>There is no spontaneous change of the gas towards seeking larger or
+smaller volume</li>
+<li>Since the internal pressure (<span class="math inline">\(P\)</span>)
+and the external pressure (<span class="math inline">\(P{ext}\)</span>)
+are the same <span
+class="math display">\[{dw}=-P_{ext}{dV}=-P{dV}\]</span></li>
+</ul>
+<div class="whitebox">
+<p><strong>Solving Reversible Gas Expansion</strong></p>
+<p><span class="math inline">\({dw}=-P_{ext}{dV}=-P{dV}\)</span></p>
+<p><span class="math display">\[
+\begin{align}
+w &amp;= -\int {PdV} \\
+  &amp;= -\int \left ( \frac{nRT}{V} \right ) \\
+  &amp;= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} = -{nRT}ln\frac{V_2}{V_1}
+\\
+\end{align}
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="reaction-enthalpies" class="section level3">
+<h3>Reaction Enthalpies</h3>
+<ul>
+<li>Reaction enthalpies are difficult to tabulate</li>
+<li>We can us Hess’ Law to simplify this</li>
+<li>We can use tabulated enthalpies to calculate the enthalpies of other
+reactions</li>
+</ul>
+<div id="example-3.11" class="section level4">
+<h4>Example 3.11</h4>
+<p>Find <span class="math inline">\(\Delta H_{rxn}\)</span></p>
+<hr />
+</div>
+</div>
+<div id="standard-enthalpy-of-formation" class="section level3">
+<h3>Standard Enthalpy of Formation</h3>
+<p><span class="math inline">\(\Delta H_{rxn}^{o}\)</span><br />
+- One problem with many thermodynamic state variables is that it is
+possible to measure changes but not absolute values<br />
+- It is therefore necessary to define a zero<br />
+- the standard enthalpy of formation of a pure element in its standard
+state is zero</p>
+<center>
+<strong>The standard state of a substance is the most stable form of
+that substance at 1 atmosphere pressure and the specified
+temperature.</strong>
+<center>
+<hr />
+</div>
+<div id="standard-formation-reactions" class="section level3">
+<h3>Standard Formation Reactions</h3>
+<ul>
+<li><p>We measure and tabulate the standard formation reactions for
+compounds</p></li>
+<li><p>These reactions involve one of the substance in its standard
+state from the elements in their standard states</p></li>
+<li><p><span class="math inline">\({NaCl}{(s)}\)</span></p></li>
+</ul>
+<p><span class="math display">\[{Na(s)}+\frac{1}{2}{Cl}_{2}{(g)}
+\rightarrow {NaCl(s)}\]</span></p>
+</div>
 
 
 

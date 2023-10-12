@@ -1,0 +1,140 @@
+---
+title: "<center>First Law of Thermodynamics<center>"
+output: html_document
+---
+
+---
+
+### Work and Heat
+#### James P. Joule (1818-1889)
+- Joule was one of the pioneers of modern thermodynamics.
+- Among his experiments, Joule attempted to measure the effect of work on the temperature of water.
+
+---
+
+### The First Law of Thermodynamics
+
+:::: {.whitebox data-latex=""}
+::: {.center data-latex=""}
+The capacity of a system to do work is increased by heating the system or doing work on it.
+:::
+::::
+- The first law translates to
+$$\Delta {U}={q}+{w}$$
+$${dU}={dq}+{dw}$$
+
+---
+
+### Heat
+- Heat is the flow of energy that, in the absence of other changes, will change the temperature of the system.
+- **Endothermic**: heat flows into the system ($q_{system}>0$)
+- **Exothermic**: heat flows out of the system ($q_{system}<0$)
+- An infinitesimal amount of heat flowing can be related to the temperature change as 
+$${dq}={CdT}$$
+  where $C$ is the heat capacity
+
+:::: {.whitebox data-latex=""}
+**Example 3.1**
+
+How much energy is needed to raise the temperature of $5.0g$ of water from $21.0^{o}C$ to $25.0^{o}C$?
+::::
+
+#### Side Note: Partial Derivative
+- The ideal gas law tells us that 
+$${P(V.n.T)}=\frac{nRT}{V}$$
+- How do we calculate the infinitesimal change in the pressure ($dP$) if all the variable can change?
+- The infinitesimal change in any function can be calculated as
+$${df}=\sum_{i}\left( \frac{\delta f}{\delta x_{i}} \right )_{x_{j}\neq {i}}{dx}_{i}$$
+
+---
+
+### Work
+- Work can take various forms, some of which we have already spoken about  
+<center>**Type of Work Displacement Resistance**<center>
+- Expansion: 
+$${dw}=-P_{ext}{dV}$$
+- Electrical: 
+$${dw}=-W{dQ}$$
+- Extension: 
+$${dw}={TdL}$$
+- Stretching: 
+$${dw}={sdA}$$
+
+:::: {.whitebox data-latex=""}
+**Example 3.2**
+
+What is the work done by $1.00{mol}$ of an ideal gas expanding from a volume of $22.4L$ to a volume of $44.8L$ against a constant external pressure of $0.500{atm}$?
+::::
+
+---
+
+<center> <h2> <b> <mark> Reversible and Irreversible Pathways </mark> </b> </h2> </center>
+
+### Reversible Gas Expansions
+- Imagine a gas in a cylinder (with a piston) where the pressure of the gas and the external pressure are the same.
+- There is no spontaneous change of the gas towards seeking larger or smaller volume
+- Since the internal pressure ($P$) and the external pressure ($P{ext}$) are the same
+$${dw}=-P_{ext}{dV}=-P{dV}$$
+
+:::: {.whitebox data-latex=""}
+**Solving Reversible Gas Expansion**
+
+${dw}=-P_{ext}{dV}=-P{dV}$
+
+$$
+\begin{align}
+w &= -\int {PdV} \\
+  &= -\int \left ( \frac{nRT}{V} \right ) \\
+  &= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} = -{nRT}ln\frac{V_2}{V_1} \\
+\end{align}
+$$
+::::
+
+:::: {.whitebox data-latex=""}
+**Example 3.3**
+
+What is the work done by $1.00{mol}$ of an ideal gas expanding reversibly from a volume of $22.4{L}$ to a volume of $44.8{L}$ at a constant temperature of $273K$?
+::::
+
+::::{.whitebox data-latex=""}
+**Note:** Isothermal Processes of an Ideal Gas
+
+- Isothermal means the process occurs at a constant temperature
+- Ideal gases, due to its assumptions, can only store energy as kinetic energy
+- Changing kinetic energy means changing temperature
+- So, no change in temperature means no change in $U$
+- $\Delta U = 0\therefore q = -w$ for isothermal processes involving ideal gases
+::::
+
+---
+
+### Reaction Enthalpies
+- Reaction enthalpies are difficult to tabulate
+- We can us Hess' Law to simplify this
+- We can use tabulated enthalpies to calculate the enthalpies of other reactions
+
+#### Example 3.11
+Find $\Delta H_{rxn}$
+
+---
+
+### Standard Enthalpy of Formation 
+$\Delta H_{rxn}^{o}$  
+- One problem with many thermodynamic state variables is that it is possible to measure changes but not absolute values  
+- It is therefore necessary to define a zero  
+  - the standard enthalpy of formation of a pure element in its standard state is zero  
+
+<center>  
+**The standard state of a substance is the most stable form of that substance at 1 atmosphere pressure and the specified temperature.**
+<center>
+
+---
+
+### Standard Formation Reactions
+- We measure and tabulate the standard formation reactions for compounds
+- These reactions involve one of the substance in its standard state from the elements in their standard states
+
+- ${NaCl}{(s)}$
+
+$${Na(s)}+\frac{1}{2}{Cl}_{2}{(g)} \rightarrow {NaCl(s)}$$
+

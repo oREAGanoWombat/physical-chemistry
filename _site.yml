@@ -2,10 +2,11 @@ name: "physical-chemistry"
 output_dir: "docs"
 navbar:
   title: "Physical Chemistry Guidebook"
+  type: inverse
   left:
     - text: "Ideal Gas Law"
       href: ideal-gas.html
-    - text: "First Law of Thermodynamics"
+    - text: "1st Law of Thermodynamics"
       href: first-law.html
     - text: "Gas Expansion"
       href: gas-expansion.html
@@ -20,3 +21,8 @@ navbar:
           href: isochoric-expansion.html
         - text: "Isothermal"
           href: isothermal-expansion.html
+output: 
+  html_document: 
+    theme: united
+    highlight: breezedark
+    css: style.css

@@ -1,0 +1,22 @@
+.whitebox {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+}
+.center {
+  text-align: center;
+}
+
+mark {
+  background-color: lightgray;
+  color: black;
+  font-weight: bold;
+}
+
+markcyan {
+  background-color: cyan;
+  color: black;
+}
+
