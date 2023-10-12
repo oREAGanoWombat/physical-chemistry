@@ -1,3 +1,4 @@
+
 .whitebox {
   padding: 1em;
   background: white;
@@ -5,6 +6,7 @@
   border: 2px solid lightgray;
   border-radius: 10px;
 }
+
 .center {
   text-align: center;
 }
