@@ -2,7 +2,6 @@ name: "physical-chemistry"
 output_dir: "docs"
 navbar:
   title: "Physical Chemistry Guidebook"
-  type: inverse
   left:
     - text: "Ideal Gas Law"
       href: ideal-gas.html
@@ -17,12 +16,14 @@ navbar:
           href: reversible-expansion.html
         - text: "Adiabatic"
           href: adiabatic-expansion.html
+        - text: "Isobaric"
+          href: isobaric-expansion.html
         - text: "Isochoric"
           href: isochoric-expansion.html
         - text: "Isothermal"
           href: isothermal-expansion.html
 output: 
-  html_document: 
-    theme: united
-    highlight: breezedark
+  html_document:
+    theme: flatly
+    hightlight: pygments
     css: style.css

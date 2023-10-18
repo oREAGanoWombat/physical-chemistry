@@ -9,9 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Reagan Womack" />
 
+<meta name="date" content="2023-10-18" />
 
-<title>Physical Chemistry Guidebook</title>
+<title>test</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -288,13 +290,42 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Physical Chemistry Guidebook</h1>
-<h4 class="date">Last Update: 2023-10-18</h4>
+<h1 class="title toc-ignore">test</h1>
+<h4 class="author">Reagan Womack</h4>
+<h4 class="date">2023-10-18</h4>
 
 </div>
 
 
-
+<html>
+<button id="showButton">
+Solving Reversible Gas Expansions
+</button>
+<div id="content" style="display: none;">
+<div class="whitebox">
+<p><span
+class="math display">\[{dw}=-P_{\text{ext}}{dV}=-P{dV}\]</span></p>
+<p><span class="math display">\[
+  \begin{align}
+  w &amp;= -\int {PdV} \\
+    &amp;= -\int \left ( \frac{nRT}{V} \right ) \\
+    &amp;= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} =
+-{nRT}\ln\frac{V_2}{V_1} \\
+  \end{align}
+  \]</span></p>
+</div>
+</div>
+<script>
+document.getElementById("showButton").addEventListener("click", function() {
+  var content = document.getElementById("content");
+  if (content.style.display === "none" || content.style.display === "") {
+    content.style.display = "block";
+  } else {
+    content.style.display = "none";
+  }
+});
+</script>
+</html>
 
 
 

@@ -1,0 +1,36 @@
+---
+title: "Adiabatic Pathways"
+output: html_document
+---
+
+---
+
+- An adiabatic pathway is one in which no heat is transfered, $dq=0$.
+- If an ideal gas expands adiabatically, it is doing work against the surrounds ($w<0$) so the internal energy must drop ($\Delta U<0$)
+- Because the internal energy of an ideal gas depends solely on the temperature, if $\Delta U<0$ then $\Delta T<0$
+
+---
+
+<h4> <a href=reversible-expansion.html> Reversible </a> Adiabatic Expansion of an Ideal Gas </h4>
+We know that
+$$dw=-PdV$$
+and
+$$dw=nC_VdT$$
+therefore
+$$-PdV=nC_VdT$$
+Using the ideal gas law we find that
+$$- \frac{nRT}{V}dV=nC_VdT$$
+
+Integrating to get to macroscopic changes
+$$\int_{V_1}^{V_2} \frac{dV}{V} = - \frac{C_V}{R} \int_{T_1}^{T_2} \frac{dT}{T}$$
+which solves to
+$$ln \left(\frac{V_2}{V_1} \right) =- \frac{C_V}{R} ln \left(\frac{T_2}{T_2} \right)$$
+$$\left(\frac{V_2}{V_1} \right) = \left(\frac{T_2}{T_1} \right) ^{\frac{C_V}{R}} \Rightarrow T_1 \left(\frac{V_2}{V_1} \right) ^{\frac{R}{C_V}} = T_2$$
+
+---
+
+:::: {.whitebox data-latex-""}
+**Example 3.7**
+
+$1.00mol$ of an ideal gas ($C_V=\frac{3}{2} R$) initially occupies $22.4L$ at $273K$. The gas expands adiabatically and reversibly to a final volume of $44.8L$. Calculate $\Delta T$, $q$, $w$, $\Delta U$, and $\Delta H$ for the expansion. 
+::::

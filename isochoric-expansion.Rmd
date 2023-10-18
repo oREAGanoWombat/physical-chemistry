@@ -1,0 +1,23 @@
+---
+title: "Isochoric Expansion"
+---
+
+---
+
+### Constant Volume "Expansion"
+- If a gas is constrained by sufficient force, it cannot change volume therefore ${dV}=0$
+- So,
+$${dU}={dq}+{dw}={dq}-{PdV}={dq}$$
+- Since, ${dq}={CdT}$
+$${dU}={CdT}$$
+- This gives us an important definition for the constant volume heat capacity
+$${C_{V}}\equiv \left ( \frac{\delta U}{\delta T} \right )_{V}$$
+- **Note:** $q=\int_{T_1}^{T_2}{nC_{V}dT}$
+
+---
+
+:::: {.whitebox data-latex=""}
+**Example 3.4**
+
+Consider $1.00mol$ of an ideal gas with $C_V=\frac{3}{2}R$ that undergoes a temperature change from $125K$ to $255K$ at a constant volume of $10.0L$. Calculate $\DeltaU$, $q$, and $w$ for this change.
+::::

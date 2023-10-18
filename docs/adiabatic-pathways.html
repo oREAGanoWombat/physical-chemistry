@@ -11,7 +11,7 @@
 
 
 
-<title>Physical Chemistry Guidebook</title>
+<title>Adiabatic Pathways</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -288,13 +288,54 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Physical Chemistry Guidebook</h1>
-<h4 class="date">Last Update: 2023-10-18</h4>
+<h1 class="title toc-ignore">Adiabatic Pathways</h1>
 
 </div>
 
 
-
+<hr />
+<ul>
+<li>An adiabatic pathway is one in which no heat is transfered, <span
+class="math inline">\(dq=0\)</span>.</li>
+<li>If an ideal gas expands adiabatically, it is doing work against the
+surrounds (<span class="math inline">\(w&lt;0\)</span>) so the internal
+energy must drop (<span class="math inline">\(\Delta
+U&lt;0\)</span>)</li>
+<li>Because the internal energy of an ideal gas depends solely on the
+temperature, if <span class="math inline">\(\Delta U&lt;0\)</span> then
+<span class="math inline">\(\Delta T&lt;0\)</span></li>
+</ul>
+<hr />
+<h4>
+<a href=reversible-expansion.html> Reversible </a> Adiabatic Expansion
+of an Ideal Gas
+</h4>
+<p>We know that <span class="math display">\[dw=-PdV\]</span> and <span
+class="math display">\[dw=nC_VdT\]</span> therefore <span
+class="math display">\[-PdV=nC_VdT\]</span> Using the ideal gas law we
+find that <span class="math display">\[-
+\frac{nRT}{V}dV=nC_VdT\]</span></p>
+<p>Integrating to get to macroscopic changes <span
+class="math display">\[\int_{V_1}^{V_2} \frac{dV}{V} = - \frac{C_V}{R}
+\int_{T_1}^{T_2} \frac{dT}{T}\]</span> which solves to <span
+class="math display">\[ln \left(\frac{V_2}{V_1} \right) =- \frac{C_V}{R}
+ln \left(\frac{T_2}{T_2} \right)\]</span> <span
+class="math display">\[\left(\frac{V_2}{V_1} \right) =
+\left(\frac{T_2}{T_1} \right) ^{\frac{C_V}{R}} \Rightarrow T_1
+\left(\frac{V_2}{V_1} \right) ^{\frac{R}{C_V}} = T_2\]</span></p>
+<hr />
+<p>:::: {.whitebox data-latex-““} <strong>Example 3.7</strong></p>
+<p><span class="math inline">\(1.00mol\)</span> of an ideal gas (<span
+class="math inline">\(C_V=\frac{3}{2} R\)</span>) initially occupies
+<span class="math inline">\(22.4L\)</span> at <span
+class="math inline">\(273K\)</span>. The gas expands adiabatically and
+reversibly to a final volume of <span
+class="math inline">\(44.8L\)</span>. Calculate <span
+class="math inline">\(\Delta T\)</span>, <span
+class="math inline">\(q\)</span>, <span
+class="math inline">\(w\)</span>, <span class="math inline">\(\Delta
+U\)</span>, and <span class="math inline">\(\Delta H\)</span> for the
+expansion. ::::</p>
 
 
 

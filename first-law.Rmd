@@ -1,140 +1,323 @@
 ---
 title: "<center>First Law of Thermodynamics<center>"
-output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
----
+------------------------------------------------------------------------
 
 ### Work and Heat
-#### James P. Joule (1818-1889)
-- Joule was one of the pioneers of modern thermodynamics.
-- Among his experiments, Joule attempted to measure the effect of work on the temperature of water.
 
----
+#### James P. Joule (1818-1889)
+
+-   Joule was one of the pioneers of modern thermodynamics.
+-   Among his experiments, Joule attempted to measure the effect of work
+    on the temperature of water.
+
+------------------------------------------------------------------------
 
 ### The First Law of Thermodynamics
 
-:::: {.whitebox data-latex=""}
+::: {.whitebox data-latex=""}
 ::: {.center data-latex=""}
-The capacity of a system to do work is increased by heating the system or doing work on it.
+The capacity of a system to do work is increased by heating the system
+or doing work on it.
 :::
-::::
-- The first law translates to
-$$\Delta {U}={q}+{w}$$
-$${dU}={dq}+{dw}$$
+:::
 
----
+$$\;$$
+
+-   The first law translates to $$\Delta {U}={q}+{w}$$
+    $${dU}={dq}+{dw}$$
+
+------------------------------------------------------------------------
 
 ### Heat
-- Heat is the flow of energy that, in the absence of other changes, will change the temperature of the system.
-- **Endothermic**: heat flows into the system ($q_{system}>0$)
-- **Exothermic**: heat flows out of the system ($q_{system}<0$)
-- An infinitesimal amount of heat flowing can be related to the temperature change as 
-$${dq}={CdT}$$
-  where $C$ is the heat capacity
 
-:::: {.whitebox data-latex=""}
+-   Heat is the flow of energy that, in the absence of other changes,
+    will change the temperature of the system.
+-   **Endothermic**: heat flows into the system ($q_{system}>0$)
+-   **Exothermic**: heat flows out of the system ($q_{system}<0$)
+-   An infinitesimal amount of heat flowing can be related to the
+    temperature change as $${dq}={CdT}$$ where $C$ is the heat capacity
+
+::: {.whitebox data-latex=""}
 **Example 3.1**
 
-How much energy is needed to raise the temperature of $5.0g$ of water from $21.0^{o}C$ to $25.0^{o}C$?
-::::
+How much energy is needed to raise the temperature of $5.0g$ of water
+from $21.0^{o}C$ to $25.0^{o}C$?
+:::
+
+$$\;$$
 
 #### Side Note: Partial Derivative
-- The ideal gas law tells us that 
-$${P(V.n.T)}=\frac{nRT}{V}$$
-- How do we calculate the infinitesimal change in the pressure ($dP$) if all the variable can change?
-- The infinitesimal change in any function can be calculated as
-$${df}=\sum_{i}\left( \frac{\delta f}{\delta x_{i}} \right )_{x_{j}\neq {i}}{dx}_{i}$$
 
----
+-   The ideal gas law tells us that $${P(V.n.T)}=\frac{nRT}{V}$$
+-   How do we calculate the infinitesimal change in the pressure ($dP$)
+    if all the variable can change?
+-   The infinitesimal change in any function can be calculated as
+    $${df}=\sum_{i}\left( \frac{\delta f}{\delta x_{i}} \right )_{x_{j}\neq {i}}{dx}_{i}$$
+
+------------------------------------------------------------------------
 
 ### Work
-- Work can take various forms, some of which we have already spoken about  
-<center>**Type of Work Displacement Resistance**<center>
-- Expansion: 
-$${dw}=-P_{ext}{dV}$$
-- Electrical: 
-$${dw}=-W{dQ}$$
-- Extension: 
-$${dw}={TdL}$$
-- Stretching: 
-$${dw}={sdA}$$
 
-:::: {.whitebox data-latex=""}
+-   Work can take various forms, some of which we have already spoken
+    about\
+
+    <center>
+
+    **Type of Work Displacement Resistance**
+
+    <center>
+
+-   Expansion: $${dw}=-P_{ext}{dV}$$
+
+-   Electrical: $${dw}=-W{dQ}$$
+
+-   Extension: $${dw}={TdL}$$
+
+-   Stretching: $${dw}={sdA}$$
+
+::: {.whitebox data-latex=""}
 **Example 3.2**
 
-What is the work done by $1.00{mol}$ of an ideal gas expanding from a volume of $22.4L$ to a volume of $44.8L$ against a constant external pressure of $0.500{atm}$?
-::::
+What is the work done by $1.00{mol}$ of an ideal gas expanding from a
+volume of $22.4L$ to a volume of $44.8L$ against a constant external
+pressure of $0.500{atm}$?
+:::
+
+------------------------------------------------------------------------
+
+<center>
+
+<h2><b> <mark> Reversible and Irreversible Pathways </mark> </b></h2>
+
+</center>
+
+<a href=reversible-expansion.html>
+
+<h3>Reversible Gas Expansions</h3>
+
+</a> <a href=irreversible-expansion.html>
+
+<h3>Irreversible Gas Expansions</h3>
+
+</a> <a href=isochoric-expansion.html>
+
+<h4>Isochoric Expansion</h4>
+
+</a> <a href=isobaric-expansion.html>
+
+<h4>Isobaric Expansion</h4>
+
+</a> <a href=adiabatic-pathways.html>
+
+<h4>Adiabatic Pathways</h4>
+
+</a>
+
+------------------------------------------------------------------------
+
+<h2><b> <mark> Calorimetry </mark> </b></h2>
+
+-   The techniques of calorimetry can be used to measure $q$ for a
+    chemical reaction directly
+-   Calorimetry is based on the idea that if heat leaves the system it
+    must enter the surroundings
+-   We measure the temperature change in the surroundngs, usually water
+
+### Bomb Calorimetry
+
+-   Bomb calorimetry is used mostly to measure the heat evolved in
+    combustion reactions
+
+#### "Water Equivalent" of a Bomb Calorimeter
+
+-   Bomb calorimeters are calibrated by carrying out a reaction with a
+    known $\Delta U_{rxn}$ - commonly the combustion of benzoic acid
+-   This calibration reaction allows the researcher to calculate the
+    "water equivalent" ($W$) of the calorimeter
+    -   $n$ is the number of moles of benzoic acid used
+    -   $\Delta U_c$ is the internal energy of compustion of benzoic
+        acid ($3225.7 \frac{kJ}{mol}$ at $26^oC$)
+    -   $e_{wire}$ is the energy released in the combustion of the fuse
+        wire
+    -   $e_{other}$ accounts for any other corrections
+
+$$W=\frac{n\Delta{U_c}+e_{wire}+e_{other}}{\Delta T}$$
+
+::: {.graybox data-latex=""}
+**Using the "Water Equivalent"**
+
+-   The "water equivalent" can be used to determine the $\Delta U_c$ for
+    an unknown reaction
+    $$\Delta U_c = \frac{W\Delta T-e_{wire}-e_{other}}{n_{sample}}$$
+:::
+
+$$\;$$
+
+-   The enthalpy of combustion can be found from the internal energy of
+    combustion $$
+    \begin{align}
+    \Delta H    &=    \Delta U + \Delta (PV)   \\
+              &=    \Delta U + RT \Delta{n_{gas}} \\
+    \end{align}
+    $$
+-   For benzoic acid
+    $$C_6H_5COOH(s)+7.5O_2(g) \rightarrow 7CO_2(g)+3H_2O(l)$$ so
+    $\Delta n_{gas} = -0.5mol$
+
+::: {.whitebox data-latex=""}
+**Example 3.8**
+
+A student burned a $0.7842g$ sample of benzoic acid ($C_7H_6O_2$) in a
+bomb calorimeter initially at $25.0^oC$ and saw a temperature increase
+of $2.02^oC$. She then burned a $0.5348g$ sample of naphthalene
+($C_10H_8$) (again from an initial temperature of $25^oC$) and saw a
+temperature increase of $2.24^oC$. From this data, calculate
+$\Delta H_c$ for naphthalene (assuming $e_{wire}$ and $e_{other}$ are
+unimportant).
+:::
+
+------------------------------------------------------------------------
+
+<h2><mark>Temperature Dependence of Enthalpy</mark></h2>
+
+- At constant pressure, $dH=C_pdT$
+- For a temperature change we get
+$$\Delta H = \int_{T_1}^{T_2} C_pdT$$
+- If $C_p$ is independent of temperature this reduces to
+$$\Delta H = C_p \Delta T$$
 
 ---
 
-<center> <h2> <b> <mark> Reversible and Irreversible Pathways </mark> </b> </h2> </center>
-
-### Reversible Gas Expansions
-- Imagine a gas in a cylinder (with a piston) where the pressure of the gas and the external pressure are the same.
-- There is no spontaneous change of the gas towards seeking larger or smaller volume
-- Since the internal pressure ($P$) and the external pressure ($P{ext}$) are the same
-$${dw}=-P_{ext}{dV}=-P{dV}$$
-
-:::: {.whitebox data-latex=""}
-**Solving Reversible Gas Expansion**
-
-${dw}=-P_{ext}{dV}=-P{dV}$
-
+<h3>Varying Heat Capacity</h3>
+- A common empirical model can fit heat capacities over broad temperature ranges
+$$C_p(T) = a + bT + \frac{c}{T^2}$$
+- Plugging this into our enthalpy change equation yields
 $$
 \begin{align}
-w &= -\int {PdV} \\
-  &= -\int \left ( \frac{nRT}{V} \right ) \\
-  &= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} = -{nRT}ln\frac{V_2}{V_1} \\
+\Delta H    &=    \int_{T_1}^{T_2}\left(a+bT+\frac{c}{T^2}\right)dT    \\
+            &=    a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2)-\frac{c}{3}\left(\frac{1}{T_2^3}-\frac{1}{T_1^3} \right)   \\
 \end{align}
 $$
-::::
+- For chemical reactions
+$$\Delta H_{rxn}(T_2)=\Delta H_{rxn}(T_1)+\Delta C_p\Delta T$$
 
-:::: {.whitebox data-latex=""}
-**Example 3.3**
+::: {.graybox data-latex=""}
+### **Empirical Parameters for the Temperature Dependence of** $C_p$
 
-What is the work done by $1.00{mol}$ of an ideal gas expanding reversibly from a volume of $22.4{L}$ to a volume of $44.8{L}$ at a constant temperature of $273K$?
-::::
+| **Substance** | $a(J{mol}^{-1}K^{-1})$ | $b(J{mol}^{-1}K^{-2})$ | $c(J{mol}^{-1}K)$ |
+|:--------------|:-----------------------|:-----------------------|:------------------|
+| $C(gr)$ | $16.86$ | $4.77 \cdot 10^{-3}$ | $-8.54 \cdot 10^5$ |
+| $CO_2(g)$ | $44.22$ | $8.79 \cdot 10^{-3}$ | $-8.62 \cdot 10^5$ |
+| $H_2O(l)$ | $75.29$ | $0$ | $0$ |
+| $N_2(g)$ | $28.58$ | $3.77 \cdot 10^{-3}$ | $-5.0 \cdot 10^4$ |
+| $Pb(s)$ | $22.13$ | $1.172 \cdot 10^{-2}$ | $9.6 \cdot 10^4$ |
+:::
 
-::::{.whitebox data-latex=""}
-**Note:** Isothermal Processes of an Ideal Gas
+$$\;$$
 
-- Isothermal means the process occurs at a constant temperature
-- Ideal gases, due to its assumptions, can only store energy as kinetic energy
-- Changing kinetic energy means changing temperature
-- So, no change in temperature means no change in $U$
-- $\Delta U = 0\therefore q = -w$ for isothermal processes involving ideal gases
-::::
+::: {.whitebox data-latex=""}
+**Example 3.9**
+
+What is the molar enthalpy change for a temperature increase from $273K$ to $353K$ for $Pb(s)$?
+:::
+
+$$\;$$
+
+::: {.whitebox data-latex=""}
+**Example 3.10**
+
+The enthalpy of formation of $NH_3(g)$ is $-46.11\frac{kJ}{mol}$ at $25^oC$. Calculate the enthalpy of formation at $100^oC$. Assuming heat capacities are independent of temperature.
+
+| **Substance** | $C_p(J{mol}^{-1}K^{-1})$ |
+|:--------------|:------------------------|
+| $N_2(g)$ | $29.12$ |
+| $H_2(g)$ | $28.82$ |
+| $NH_3(g)$ | $35.06$ |
+:::
 
 ---
 
 ### Reaction Enthalpies
-- Reaction enthalpies are difficult to tabulate
-- We can us Hess' Law to simplify this
-- We can use tabulated enthalpies to calculate the enthalpies of other reactions
 
-#### Example 3.11
-Find $\Delta H_{rxn}$
+-   Reaction enthalpies are difficult to tabulate
+-   We can us Hess' Law to simplify this
+-   We can use tabulated enthalpies to calculate the enthalpies of other
+    reactions
 
----
+::: {.whitebox data-latex=""}
+**Example 3.11**
 
-### Standard Enthalpy of Formation 
-$\Delta H_{rxn}^{o}$  
-- One problem with many thermodynamic state variables is that it is possible to measure changes but not absolute values  
-- It is therefore necessary to define a zero  
-  - the standard enthalpy of formation of a pure element in its standard state is zero  
+Find $\Delta H_{rxn}$ for the reaction
+$$2CO(g)+O_2(g) \rightarrow 2CO_2(g)$$
+given that 
+$$
+  \begin{align}
+    C(gr)+\frac{1}{2}O_2(g) \rightarrow CO(g)   &   &\Delta H = -110.53kJ   \\
+    C(gr)+O_2(g) \rightarrow CO_2(g)            &   &\Delta H = -393.51kJ   \\
+  \end{align}
+$$
+:::
 
-<center>  
-**The standard state of a substance is the most stable form of that substance at 1 atmosphere pressure and the specified temperature.**
+------------------------------------------------------------------------
+
+### Standard Enthalpy of Formation
+- One problem with many thermodynamic state variables is that it is
+possible to measure changes but not absolute values
+- It is therefore necessary to define a zero
+  - the standard enthalpy of formation of a pure element in its standard state is zero
+
 <center>
 
----
+**The standard state of a substance is the most stable form of that
+substance at 1 atmosphere pressure and the specified temperature.**
+
+<center>
+
+------------------------------------------------------------------------
 
 ### Standard Formation Reactions
-- We measure and tabulate the standard formation reactions for compounds
-- These reactions involve one of the substance in its standard state from the elements in their standard states
 
-- ${NaCl}{(s)}$
+-   We measure and tabulate the standard formation reactions for
+    compounds
 
-$${Na(s)}+\frac{1}{2}{Cl}_{2}{(g)} \rightarrow {NaCl(s)}$$
+-   These reactions involve one of the substance in its standard state
+    from the elements in their standard states
 
+-   ${NaCl}{(s)}$ :
+
+$$
+  \begin{align}
+    {Na(s)}+\frac{1}{2}{Cl}_{2}{(g)} \rightarrow {NaCl(s)}    &   &   \Delta H_f^o = -411.2 \frac{kJ}{mol}    \\
+  \end{align}
+$$ 
+
+-   $C_3H_8{(g)}$ :
+$$
+  \begin{align}
+    C(gr)+4H_2(g) \rightarrow C_3H_8(g)   &   &   \Delta H_f^o = -103.8 \frac{kJ}{mol}
+  \end{align}
+$$
+
+-   We can use Hess' Law with standard heats of formation
+
+------------------------------------------------------------------------
+
+#### Alternation Use of Heats of Formation
+
+-   Because standard formation reactions begin with elements in their standard states we can simplify Hess' Law
+-   The reaction enthalpy can be calculated from the standard formation reaction enthalpy by 
+$$\Delta H_{rxn}= \sum_{products }\upsilon \cdot \Delta H_f^o - \sum_{reactants} \upsilon \cdot \Delta H_f^o$$
+  where $\upsilon$ is the stoichiometric coefficient of a species in the balanced chemical reaction
+
+------------------------------------------------------------------------
+
+<a href = ionization-reactions.html>
+
+<h3><b> Ionization Reactions </b></h3>
+
+</a>

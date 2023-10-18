@@ -1,0 +1,33 @@
+---
+title: "test"
+author: "Reagan Womack"
+date: "`r Sys.Date()`"
+---
+<html>
+<button id="showButton">Solving Reversible Gas Expansions</button>
+
+<div id="content" style="display: none;">
+:::: {.whitebox data-latex=""}
+  $${dw}=-P_{\text{ext}}{dV}=-P{dV}$$
+
+  $$
+  \begin{align}
+  w &= -\int {PdV} \\
+    &= -\int \left ( \frac{nRT}{V} \right ) \\
+    &= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} = -{nRT}\ln\frac{V_2}{V_1} \\
+  \end{align}
+  $$
+::::
+</div>
+
+<script>
+document.getElementById("showButton").addEventListener("click", function() {
+  var content = document.getElementById("content");
+  if (content.style.display === "none" || content.style.display === "") {
+    content.style.display = "block";
+  } else {
+    content.style.display = "none";
+  }
+});
+</script>
+</html>

@@ -1,0 +1,43 @@
+---
+title: "Isobaric Expansion"
+output: html_document
+---
+
+---
+
+### Constant Pressure Pathway  
+- Most laboratory-based chemistry occurs at constant pressure  
+- It is convenient to define a new thermodynamic quantity called <b> enthalpy </b>  
+$$H\equiv U+PV$$
+$$dH \equiv dU+d(PV) = dU+PdV+VdP$$
+$$dH=dq+dw+PdV+VdP$$
+- If only $PV$ work can be done then
+$$dH=dq-PdV+PdV+VdP=dq+VdP$$
+
+---
+
+<h4> <a href=reversible-expansion.html> Reversible </a> Isobaric Changes </h4>
+$$dH=dq-PdV+PdV+VdP=dq+VdP$$
+
+- For reversible changes (constant pressure), $dP=0$, so
+
+$$dH=dq$$  
+
+- This means that for a constant pressure situation, the change in heat equals the change in enthalpy
+    - By the way, this is why the symbol for enthalpy is an "$H$" ... it originally stood for HEAT
+    
+---
+
+:::: {.whitebox data-latex=""}
+**Example 3.5**
+
+Consider $1.00mol$ of an ideal gas with $C_P=\frac{5}{2}$ that changes from temperature from $125K$ to $255K$ at a constant pressure of $10.0atm$. Calculate $\Delta U$, $\Delta H$, $q$, and $w$ for this change.
+::::
+
+---
+
+:::: {.whitebox data-latex=""}
+**Example 3.6**
+
+Calculate $q$, $w$, $\Delta U$, and $\Delta H$ for $1.00mol$ of an ideal gas expanding reversibly and isothermally at $273K$ from a volume of $22.4L$ and a pressure of $1.00atm$ to a volume of $44.8L$ and a pressure of $0.500atm$.
+::::

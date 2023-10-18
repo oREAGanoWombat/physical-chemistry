@@ -1,0 +1,38 @@
+---
+title: "Reversible Gas Expansions"
+---
+- Imagine a gas in a cylinder (with a piston) where the pressure of the gas and the external pressure are the same.
+- There is no spontaneous change of the gas towards seeking larger or smaller volume
+- Since the internal pressure ($P$) and the external pressure ($P{ext}$) are the same
+$${dw}=-P_{ext}{dV}=-P{dV}$$
+
+:::: {.whitebox data-latex=""}
+**Solving Reversible Gas Expansions**
+
+  $${dw}=-P_{\text{ext}}{dV}=-P{dV}$$
+
+  $$
+  \begin{align}
+  w &= -\int {PdV} \\
+    &= -\int \left ( \frac{nRT}{V} \right ) \\
+    &= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} = -{nRT}\ln\frac{V_2}{V_1} \\
+  \end{align}
+  $$
+::::
+
+---
+
+:::: {.graybox data-latex=""}
+**Example 3.3**
+
+What is the work done by $1.00{mol}$ of an ideal gas expanding reversibly from a volume of $22.4{L}$ to a volume of $44.8{L}$ at a constant temperature of $273K$?
+::::
+
+---
+
+<h4><b>Note:</b> Isothermal Processes of an Ideal Gas</h4>
+- Isothermal means the process occurs at a constant temperature
+- Ideal gases, due to its assumptions, can only store energy as kinetic energy
+- Changing kinetic energy means changing temperature
+- So, no change in temperature means no change in $U$
+- $\Delta U = 0\therefore q = -w$ for isothermal processes involving ideal gases

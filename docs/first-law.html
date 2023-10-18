@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,6 +30,8 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -40,6 +42,16 @@
   ul.task-list{list-style: none;}
     </style>
 
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -219,7 +231,7 @@ $(document).ready(function () {
 
 
 
-<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
@@ -252,6 +264,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="adiabatic-expansion.html">Adiabatic</a>
+    </li>
+    <li>
+      <a href="isobaric-expansion.html">Isobaric</a>
     </li>
     <li>
       <a href="isochoric-expansion.html">Isochoric</a>
@@ -301,6 +316,7 @@ on the temperature of water.</li>
 system or doing work on it.</p>
 </div>
 </div>
+<p><span class="math display">\[\;\]</span></p>
 <ul>
 <li>The first law translates to <span class="math display">\[\Delta
 {U}={q}+{w}\]</span> <span
@@ -328,6 +344,7 @@ class="math inline">\(5.0g\)</span> of water from <span
 class="math inline">\(21.0^{o}C\)</span> to <span
 class="math inline">\(25.0^{o}C\)</span>?</p>
 </div>
+<p><span class="math display">\[\;\]</span></p>
 <div id="side-note-partial-derivative" class="section level4">
 <h4>Side Note: Partial Derivative</h4>
 <ul>
@@ -345,17 +362,20 @@ class="math display">\[{df}=\sum_{i}\left( \frac{\delta f}{\delta x_{i}}
 <div id="work" class="section level3">
 <h3>Work</h3>
 <ul>
-<li>Work can take various forms, some of which we have already spoken
+<li><p>Work can take various forms, some of which we have already spoken
 about<br />
-
+</p>
 <center>
-<strong>Type of Work Displacement Resistance</strong>
+<p><strong>Type of Work Displacement Resistance</strong></p>
 <center></li>
-<li>Expansion: <span
-class="math display">\[{dw}=-P_{ext}{dV}\]</span></li>
-<li>Electrical: <span class="math display">\[{dw}=-W{dQ}\]</span></li>
-<li>Extension: <span class="math display">\[{dw}={TdL}\]</span></li>
-<li>Stretching: <span class="math display">\[{dw}={sdA}\]</span></li>
+<li><p>Expansion: <span
+class="math display">\[{dw}=-P_{ext}{dV}\]</span></p></li>
+<li><p>Electrical: <span
+class="math display">\[{dw}=-W{dQ}\]</span></p></li>
+<li><p>Extension: <span
+class="math display">\[{dw}={TdL}\]</span></p></li>
+<li><p>Stretching: <span
+class="math display">\[{dw}={sdA}\]</span></p></li>
 </ul>
 <div class="whitebox">
 <p><strong>Example 3.2</strong></p>
@@ -371,54 +391,251 @@ pressure of <span class="math inline">\(0.500{atm}\)</span>?</p>
 <b> <mark> Reversible and Irreversible Pathways </mark> </b>
 </h2>
 </center>
-</div>
-<div id="reversible-gas-expansions" class="section level3">
-<h3>Reversible Gas Expansions</h3>
+<p><a href=reversible-expansion.html></p>
+<h3>
+Reversible Gas Expansions
+</h3>
+<p></a> <a href=irreversible-expansion.html></p>
+<h3>
+Irreversible Gas Expansions
+</h3>
+<p></a> <a href=isochoric-expansion.html></p>
+<h4>
+Isochoric Expansion
+</h4>
+<p></a> <a href=isobaric-expansion.html></p>
+<h4>
+Isobaric Expansion
+</h4>
+<p></a> <a href=adiabatic-pathways.html></p>
+<h4>
+Adiabatic Pathways
+</h4>
+<p></a></p>
+<hr />
+<h2>
+<b> <mark> Calorimetry </mark> </b>
+</h2>
 <ul>
-<li>Imagine a gas in a cylinder (with a piston) where the pressure of
-the gas and the external pressure are the same.</li>
-<li>There is no spontaneous change of the gas towards seeking larger or
-smaller volume</li>
-<li>Since the internal pressure (<span class="math inline">\(P\)</span>)
-and the external pressure (<span class="math inline">\(P{ext}\)</span>)
-are the same <span
-class="math display">\[{dw}=-P_{ext}{dV}=-P{dV}\]</span></li>
+<li>The techniques of calorimetry can be used to measure <span
+class="math inline">\(q\)</span> for a chemical reaction directly</li>
+<li>Calorimetry is based on the idea that if heat leaves the system it
+must enter the surroundings</li>
+<li>We measure the temperature change in the surroundngs, usually
+water</li>
 </ul>
-<div class="whitebox">
-<p><strong>Solving Reversible Gas Expansion</strong></p>
-<p><span class="math inline">\({dw}=-P_{ext}{dV}=-P{dV}\)</span></p>
-<p><span class="math display">\[
+</div>
+<div id="bomb-calorimetry" class="section level3">
+<h3>Bomb Calorimetry</h3>
+<ul>
+<li>Bomb calorimetry is used mostly to measure the heat evolved in
+combustion reactions</li>
+</ul>
+<div id="water-equivalent-of-a-bomb-calorimeter" class="section level4">
+<h4>“Water Equivalent” of a Bomb Calorimeter</h4>
+<ul>
+<li>Bomb calorimeters are calibrated by carrying out a reaction with a
+known <span class="math inline">\(\Delta U_{rxn}\)</span> - commonly the
+combustion of benzoic acid</li>
+<li>This calibration reaction allows the researcher to calculate the
+“water equivalent” (<span class="math inline">\(W\)</span>) of the
+calorimeter
+<ul>
+<li><span class="math inline">\(n\)</span> is the number of moles of
+benzoic acid used</li>
+<li><span class="math inline">\(\Delta U_c\)</span> is the internal
+energy of compustion of benzoic acid (<span class="math inline">\(3225.7
+\frac{kJ}{mol}\)</span> at <span
+class="math inline">\(26^oC\)</span>)</li>
+<li><span class="math inline">\(e_{wire}\)</span> is the energy released
+in the combustion of the fuse wire</li>
+<li><span class="math inline">\(e_{other}\)</span> accounts for any
+other corrections</li>
+</ul></li>
+</ul>
+<p><span
+class="math display">\[W=\frac{n\Delta{U_c}+e_{wire}+e_{other}}{\Delta
+T}\]</span></p>
+<div class="graybox">
+<p><strong>Using the “Water Equivalent”</strong></p>
+<ul>
+<li>The “water equivalent” can be used to determine the <span
+class="math inline">\(\Delta U_c\)</span> for an unknown reaction <span
+class="math display">\[\Delta U_c = \frac{W\Delta
+T-e_{wire}-e_{other}}{n_{sample}}\]</span></li>
+</ul>
+</div>
+<p><span class="math display">\[\;\]</span></p>
+<ul>
+<li>The enthalpy of combustion can be found from the internal energy of
+combustion <span class="math display">\[
 \begin{align}
-w &amp;= -\int {PdV} \\
-  &amp;= -\int \left ( \frac{nRT}{V} \right ) \\
-  &amp;= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} = -{nRT}ln\frac{V_2}{V_1}
-\\
+\Delta H    &amp;=    \Delta U + \Delta (PV)   \\
+          &amp;=    \Delta U + RT \Delta{n_{gas}} \\
 \end{align}
-\]</span></p>
-</div>
-<div class="whitebox">
-<p><strong>Example 3.3</strong></p>
-<p>What is the work done by <span
-class="math inline">\(1.00{mol}\)</span> of an ideal gas expanding
-reversibly from a volume of <span class="math inline">\(22.4{L}\)</span>
-to a volume of <span class="math inline">\(44.8{L}\)</span> at a
-constant temperature of <span class="math inline">\(273K\)</span>?</p>
-</div>
-<div class="whitebox">
-<p><strong>Note:</strong> Isothermal Processes of an Ideal Gas</p>
-<ul>
-<li>Isothermal means the process occurs at a constant temperature</li>
-<li>Ideal gases, due to its assumptions, can only store energy as
-kinetic energy</li>
-<li>Changing kinetic energy means changing temperature</li>
-<li>So, no change in temperature means no change in <span
-class="math inline">\(U\)</span></li>
-<li><span class="math inline">\(\Delta U = 0\therefore q = -w\)</span>
-for isothermal processes involving ideal gases</li>
+\]</span></li>
+<li>For benzoic acid <span
+class="math display">\[C_6H_5COOH(s)+7.5O_2(g) \rightarrow
+7CO_2(g)+3H_2O(l)\]</span> so <span class="math inline">\(\Delta n_{gas}
+= -0.5mol\)</span></li>
 </ul>
+<div class="whitebox">
+<p><strong>Example 3.8</strong></p>
+<p>A student burned a <span class="math inline">\(0.7842g\)</span>
+sample of benzoic acid (<span class="math inline">\(C_7H_6O_2\)</span>)
+in a bomb calorimeter initially at <span
+class="math inline">\(25.0^oC\)</span> and saw a temperature increase of
+<span class="math inline">\(2.02^oC\)</span>. She then burned a <span
+class="math inline">\(0.5348g\)</span> sample of naphthalene (<span
+class="math inline">\(C_10H_8\)</span>) (again from an initial
+temperature of <span class="math inline">\(25^oC\)</span>) and saw a
+temperature increase of <span class="math inline">\(2.24^oC\)</span>.
+From this data, calculate <span class="math inline">\(\Delta
+H_c\)</span> for naphthalene (assuming <span
+class="math inline">\(e_{wire}\)</span> and <span
+class="math inline">\(e_{other}\)</span> are unimportant).</p>
 </div>
 <hr />
+<h2>
+<mark>Temperature Dependence of Enthalpy</mark>
+</h2>
+<ul>
+<li>At constant pressure, <span
+class="math inline">\(dH=C_pdT\)</span></li>
+<li>For a temperature change we get <span class="math display">\[\Delta
+H = \int_{T_1}^{T_2} C_pdT\]</span></li>
+<li>If <span class="math inline">\(C_p\)</span> is independent of
+temperature this reduces to <span class="math display">\[\Delta H = C_p
+\Delta T\]</span></li>
+</ul>
+<hr />
+<h3>
+Varying Heat Capacity
+</h3>
+<ul>
+<li>A common empirical model can fit heat capacities over broad
+temperature ranges <span class="math display">\[C_p(T) = a + bT +
+\frac{c}{T^2}\]</span></li>
+<li>Plugging this into our enthalpy change equation yields <span
+class="math display">\[
+\begin{align}
+\Delta
+H    &amp;=    \int_{T_1}^{T_2}\left(a+bT+\frac{c}{T^2}\right)dT    \\
+          &amp;=    a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2)-\frac{c}{3}\left(\frac{1}{T_2^3}-\frac{1}{T_1^3}
+\right)   \\
+\end{align}
+\]</span></li>
+<li>For chemical reactions <span class="math display">\[\Delta
+H_{rxn}(T_2)=\Delta H_{rxn}(T_1)+\Delta C_p\Delta T\]</span></li>
+</ul>
 </div>
+</div>
+<div id="empirical-parameters-for-the-temperature-dependence-of-c_p"
+class="section level3 graybox">
+<h3><strong>Empirical Parameters for the Temperature Dependence
+of</strong> <span class="math inline">\(C_p\)</span></h3>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="29%" />
+<col width="29%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><strong>Substance</strong></th>
+<th align="left"><span
+class="math inline">\(a(J{mol}^{-1}K^{-1})\)</span></th>
+<th align="left"><span
+class="math inline">\(b(J{mol}^{-1}K^{-2})\)</span></th>
+<th align="left"><span
+class="math inline">\(c(J{mol}^{-1}K)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(C(gr)\)</span></td>
+<td align="left"><span class="math inline">\(16.86\)</span></td>
+<td align="left"><span class="math inline">\(4.77 \cdot
+10^{-3}\)</span></td>
+<td align="left"><span class="math inline">\(-8.54 \cdot
+10^5\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(CO_2(g)\)</span></td>
+<td align="left"><span class="math inline">\(44.22\)</span></td>
+<td align="left"><span class="math inline">\(8.79 \cdot
+10^{-3}\)</span></td>
+<td align="left"><span class="math inline">\(-8.62 \cdot
+10^5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(H_2O(l)\)</span></td>
+<td align="left"><span class="math inline">\(75.29\)</span></td>
+<td align="left"><span class="math inline">\(0\)</span></td>
+<td align="left"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(N_2(g)\)</span></td>
+<td align="left"><span class="math inline">\(28.58\)</span></td>
+<td align="left"><span class="math inline">\(3.77 \cdot
+10^{-3}\)</span></td>
+<td align="left"><span class="math inline">\(-5.0 \cdot
+10^4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Pb(s)\)</span></td>
+<td align="left"><span class="math inline">\(22.13\)</span></td>
+<td align="left"><span class="math inline">\(1.172 \cdot
+10^{-2}\)</span></td>
+<td align="left"><span class="math inline">\(9.6 \cdot
+10^4\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math display">\[\;\]</span></p>
+<div class="whitebox">
+<p><strong>Example 3.9</strong></p>
+<p>What is the molar enthalpy change for a temperature increase from
+<span class="math inline">\(273K\)</span> to <span
+class="math inline">\(353K\)</span> for <span
+class="math inline">\(Pb(s)\)</span>?</p>
+</div>
+<p><span class="math display">\[\;\]</span></p>
+<div class="whitebox">
+<p><strong>Example 3.10</strong></p>
+<p>The enthalpy of formation of <span
+class="math inline">\(NH_3(g)\)</span> is <span
+class="math inline">\(-46.11\frac{kJ}{mol}\)</span> at <span
+class="math inline">\(25^oC\)</span>. Calculate the enthalpy of
+formation at <span class="math inline">\(100^oC\)</span>. Assuming heat
+capacities are independent of temperature.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Substance</strong></th>
+<th align="left"><span
+class="math inline">\(C_p(J{mol}^{-1}K^{-1})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(N_2(g)\)</span></td>
+<td align="left"><span class="math inline">\(29.12\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(H_2(g)\)</span></td>
+<td align="left"><span class="math inline">\(28.82\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(NH_3(g)\)</span></td>
+<td align="left"><span class="math inline">\(35.06\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
 <div id="reaction-enthalpies" class="section level3">
 <h3>Reaction Enthalpies</h3>
 <ul>
@@ -427,24 +644,36 @@ for isothermal processes involving ideal gases</li>
 <li>We can use tabulated enthalpies to calculate the enthalpies of other
 reactions</li>
 </ul>
-<div id="example-3.11" class="section level4">
-<h4>Example 3.11</h4>
-<p>Find <span class="math inline">\(\Delta H_{rxn}\)</span></p>
-<hr />
+<div class="whitebox">
+<p><strong>Example 3.11</strong></p>
+<p>Find <span class="math inline">\(\Delta H_{rxn}\)</span> for the
+reaction <span class="math display">\[2CO(g)+O_2(g) \rightarrow
+2CO_2(g)\]</span> given that <span class="math display">\[
+  \begin{align}
+    C(gr)+\frac{1}{2}O_2(g) \rightarrow CO(g)   &amp;   &amp;\Delta H =
+-110.53kJ   \\
+    C(gr)+O_2(g) \rightarrow CO_2(g)            &amp;   &amp;\Delta H =
+-393.51kJ   \\
+  \end{align}
+\]</span></p>
 </div>
+<hr />
 </div>
 <div id="standard-enthalpy-of-formation" class="section level3">
 <h3>Standard Enthalpy of Formation</h3>
-<p><span class="math inline">\(\Delta H_{rxn}^{o}\)</span><br />
-- One problem with many thermodynamic state variables is that it is
-possible to measure changes but not absolute values<br />
-- It is therefore necessary to define a zero<br />
-- the standard enthalpy of formation of a pure element in its standard
-state is zero</p>
+<ul>
+<li>One problem with many thermodynamic state variables is that it is
+possible to measure changes but not absolute values</li>
+<li>It is therefore necessary to define a zero
+<ul>
+<li>the standard enthalpy of formation of a pure element in its standard
+state is zero</li>
+</ul></li>
+</ul>
 <center>
-<strong>The standard state of a substance is the most stable form of
+<p><strong>The standard state of a substance is the most stable form of
 that substance at 1 atmosphere pressure and the specified
-temperature.</strong>
+temperature.</strong></p>
 <center>
 <hr />
 </div>
@@ -455,10 +684,44 @@ temperature.</strong>
 compounds</p></li>
 <li><p>These reactions involve one of the substance in its standard
 state from the elements in their standard states</p></li>
-<li><p><span class="math inline">\({NaCl}{(s)}\)</span></p></li>
+<li><p><span class="math inline">\({NaCl}{(s)}\)</span> :</p></li>
 </ul>
-<p><span class="math display">\[{Na(s)}+\frac{1}{2}{Cl}_{2}{(g)}
-\rightarrow {NaCl(s)}\]</span></p>
+<p><span class="math display">\[
+  \begin{align}
+    {Na(s)}+\frac{1}{2}{Cl}_{2}{(g)} \rightarrow
+{NaCl(s)}    &amp;   &amp;   \Delta H_f^o = -411.2 \frac{kJ}{mol}    \\
+  \end{align}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(C_3H_8{(g)}\)</span> : <span
+class="math display">\[
+  \begin{align}
+C(gr)+4H_2(g) \rightarrow C_3H_8(g)   &amp;   &amp;   \Delta H_f^o =
+-103.8 \frac{kJ}{mol}
+  \end{align}
+\]</span></p></li>
+<li><p>We can use Hess’ Law with standard heats of formation</p></li>
+</ul>
+<hr />
+<div id="alternation-use-of-heats-of-formation" class="section level4">
+<h4>Alternation Use of Heats of Formation</h4>
+<ul>
+<li>Because standard formation reactions begin with elements in their
+standard states we can simplify Hess’ Law</li>
+<li>The reaction enthalpy can be calculated from the standard formation
+reaction enthalpy by <span class="math display">\[\Delta H_{rxn}=
+\sum_{products }\upsilon \cdot \Delta H_f^o - \sum_{reactants} \upsilon
+\cdot \Delta H_f^o\]</span> where <span
+class="math inline">\(\upsilon\)</span> is the stoichiometric
+coefficient of a species in the balanced chemical reaction</li>
+</ul>
+<hr />
+<p><a href = ionization-reactions.html></p>
+<h3>
+<b> Ionization Reactions </b>
+</h3>
+<p></a></p>
+</div>
 </div>
 
 

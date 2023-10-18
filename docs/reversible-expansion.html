@@ -11,7 +11,7 @@
 
 
 
-<title>Physical Chemistry Guidebook</title>
+<title>Reversible Gas Expansions</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -288,13 +288,57 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Physical Chemistry Guidebook</h1>
-<h4 class="date">Last Update: 2023-10-18</h4>
+<h1 class="title toc-ignore">Reversible Gas Expansions</h1>
 
 </div>
 
 
-
+<ul>
+<li>Imagine a gas in a cylinder (with a piston) where the pressure of
+the gas and the external pressure are the same.</li>
+<li>There is no spontaneous change of the gas towards seeking larger or
+smaller volume</li>
+<li>Since the internal pressure (<span class="math inline">\(P\)</span>)
+and the external pressure (<span class="math inline">\(P{ext}\)</span>)
+are the same <span
+class="math display">\[{dw}=-P_{ext}{dV}=-P{dV}\]</span></li>
+</ul>
+<div class="whitebox">
+<p><strong>Solving Reversible Gas Expansions</strong></p>
+<p><span
+class="math display">\[{dw}=-P_{\text{ext}}{dV}=-P{dV}\]</span></p>
+<p><span class="math display">\[
+  \begin{align}
+  w &amp;= -\int {PdV} \\
+    &amp;= -\int \left ( \frac{nRT}{V} \right ) \\
+    &amp;= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} =
+-{nRT}\ln\frac{V_2}{V_1} \\
+  \end{align}
+  \]</span></p>
+</div>
+<hr />
+<div class="graybox">
+<p><strong>Example 3.3</strong></p>
+<p>What is the work done by <span
+class="math inline">\(1.00{mol}\)</span> of an ideal gas expanding
+reversibly from a volume of <span class="math inline">\(22.4{L}\)</span>
+to a volume of <span class="math inline">\(44.8{L}\)</span> at a
+constant temperature of <span class="math inline">\(273K\)</span>?</p>
+</div>
+<hr />
+<h4>
+<b>Note:</b> Isothermal Processes of an Ideal Gas
+</h4>
+<ul>
+<li>Isothermal means the process occurs at a constant temperature</li>
+<li>Ideal gases, due to its assumptions, can only store energy as
+kinetic energy</li>
+<li>Changing kinetic energy means changing temperature</li>
+<li>So, no change in temperature means no change in <span
+class="math inline">\(U\)</span></li>
+<li><span class="math inline">\(\Delta U = 0\therefore q = -w\)</span>
+for isothermal processes involving ideal gases</li>
+</ul>
 
 
 

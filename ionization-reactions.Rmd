@@ -1,0 +1,49 @@
+---
+title: "Ionization Reactions"
+output: html_document
+---
+
+- Formation of ions is seen throughout chemistry
+- The enthalpy change to remove a single electron at $0K$ from a species is defined as the ionization potential  
+$${X(g)}\rightarrow X^+{(g)}+e^-$$
+
+- The removal of subsequent electros requires energies called the 2$^{nd}$ ionization potential, 3$^{rd}$ ionization potential, etc. 
+- Electron affinity is the enthalpy associated with the formation of negative ions
+$${X(g)}+e^-\rightarrow X^-{(g)}$$
+  with $-\Delta {H(0K)}\equiv 1^{st}$ electron affinity ($EA$)
+
+<b> Example: </b>
+
+- $\Delta H_1 : M(g) \rightarrow M^+(g) + e^-$  <b> $\leftarrow 1^{st}$ Ionization Potential </b>
+- $\Delta H_2 : M^+(g) \rightarrow M^{2^+}(g) + e^-$  <b> $\leftarrow 2^{nd}$ Ionization Potential </b>
+
+---
+
+### Average Bond Enthalpies
+- Without standard formation enthalpies, we can estimate reaction enthalpies using average bond enthalpies - though this is not perfect
+- A bond dissociation energy $D$ is defined as
+$$
+  \begin{align}
+    XY(g) \rightarrow X(g)+Y(g)   &   &   \Delta H \equiv D(X-Y)
+  \end{align}
+$$
+- Using this we can estimate the reaction enthalpy
+$$\Delta H_{rxn}=\sum{(bonds \; broken)} - \sum{(bonds \; formed)}$$
+$$\;$$
+
+::: {.whitebox data-latex=""}
+**Example 3.12**
+
+Estimate the reaction enthalpy for the combustion of ethanol
+$$C_2H_5OH(g)+O_2(g) \rightarrow 2CO_2(g)+H_2O(g)$$
+using
+
+| **Bond** | **Average Bond Energy (kJ/mol)** |
+|:---------|:---------------------------------|
+| C-H | 413 |
+| C-C | 348 |
+| C-O | 358 |
+| O=O | 495 |
+| C=O | 799 |
+| O-H | 463 |
+:::
