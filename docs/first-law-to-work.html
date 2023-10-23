@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Putting the First Law to Work</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Physical Chemistry Guidebook</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="ideal-gas.html">Ideal Gas Law</a>
+</li>
+<li>
+  <a href="first-law.html">1st Law of Thermodynamics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Gas Expansion
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="irreversible-expansion.html">Irreversible</a>
+    </li>
+    <li>
+      <a href="reversible-expansion.html">Reversible</a>
+    </li>
+    <li>
+      <a href="adiabatic-expansion.html">Adiabatic</a>
+    </li>
+    <li>
+      <a href="isobaric-expansion.html">Isobaric</a>
+    </li>
+    <li>
+      <a href="isochoric-expansion.html">Isochoric</a>
+    </li>
+    <li>
+      <a href="isothermal-expansion.html">Isothermal</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Putting the First Law to Work</h1>
+
+</div>
+
+
+<hr />
+<div id="total-and-exact-differentials" class="section level1">
+<h1>Total and Exact Differentials</h1>
+<ul>
+<li>We now know that <span class="math inline">\(C_V \equiv \left( \frac
+{\delta U}{\delta T} \right)_V\)</span></li>
+<li>This suggests that <span class="math inline">\(U\)</span> is very
+dependent on <span class="math inline">\(V\)</span> and <span
+class="math inline">\(T\)</span></li>
+<li>This suggests that to change <span class="math inline">\(U\)</span>
+we can change these variables</li>
+<li>This gives us a total differential <span class="math display">\[dU =
+\left( \frac{\delta U}{\delta V} \right)_T dV + \left( \frac{\delta
+U}{\delta T} \right)_V dT\]</span></li>
+<li>This means that <span class="math display">\[\Delta U =
+\int_{V_1}^{V_2} \left( \frac{\delta U}{\delta V} \right)_T dV+
+\int_{T_1}^{T_2} \left( \frac{\delta U}{\delta T} \right)_V
+dT\]</span></li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+Exact Differentials
+</h3>
+<ul>
+<li>
+Let’s say we have a differential <span class="math display">\[ df(x,y) =
+P\,dx + Q\,dy \]</span>
+</li>
+<li>
+If these variable obey the Euler Relation <span class="math display">\[
+\left(\frac{\partial P}{\partial y}\right)_x = \left(\frac{\partial
+Q}{\partial x}\right)_y \]</span> then that differential will be an
+exact differential
+</li>
+<li>
+We can illustrate this with the ideal gas law <span
+class="math display">\[ P(V,T) = \frac{RT}{V} \]</span>
+</li>
+<li>
+The differentials of all the state functions will be exact.
+</li>
+</ul>
+<hr />
+<h2>
+<mark> Compressivity and Expansivity </mark>
+</h2>
+<h3>
+Isothermal Compressibility (<span
+class="math inline">\(\kappa_T\)</span>)
+</h3>
+<ul>
+<li>
+It is important that we understand how compressible substances are
+</li>
+<li>
+To quantify how compressible substances are we can look at the
+fractional differential change in volume due to a change in pressure
+<span class="math display">\[ \kappa_T \equiv -\frac{1}{V}
+\left(\frac{\partial V}{\partial P}\right)_T \]</span>
+</li>
+</ul>
+<span class="math inline">\(\;\)</span>
+<h3>
+Isobaric Thermal Expansivity (<span
+class="math inline">\(\alpha\)</span>)
+</h3>
+<ul>
+<li>
+It is also important to understand how the volume of a substance
+responds to temperature
+</li>
+<li>
+To quantify this, we define the isobaric thermal expansivity (sometimes
+called the expansion coefficient) <span class="math display">\[ \alpha
+\equiv \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_P
+\]</span>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="graybox">
+<h3>
+Partial Derivatives: The Reciprocal Rule
+</h3>
+<ul>
+<li>
+Consider a function <span class="math inline">\(F\)</span> of three
+variables <span class="math inline">\(x\)</span>, <span
+class="math inline">\(y\)</span>, and <span
+class="math inline">\(z\)</span> such that we can write <span
+class="math inline">\(F(x,y,z)=0\)</span>
+</li>
+<li>
+This means that we can specify the system by knowning two of the three
+variables, or <span class="math display">\[ dz = \left(\frac{\partial
+z}{\partial x}\right)_y dx + \left(\frac{\partial z}{\partial
+y}\right)_x dy \text{ and } dy = \left(\frac{\partial y}{\partial
+x}\right)_z dx + \left(\frac{\partial y}{\partial z}\right)_x dz
+\]</span>
+</li>
+<li>
+After a lot of calculus we find that <span class="math display">\[
+1=\left(\frac{\partial z}{\partial y}\right)_x \left(\frac{\partial
+y}{\partial z}\right)_x \text{ or } \left(\frac{\partial z}{\partial
+y}\right)_x = \frac{1}{\left(\frac{\partial y}{\partial
+z}\right)_x}\]</span>
+</li>
+</ul>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="graybox">
+<h3>
+Partial Derivatives: The Cyclic Permutation Rule
+</h3>
+<ul>
+<li>
+Along similar lines to the last we, we can generate a very useful
+partial differential relationship
+</li>
+</ul>
+<p><span class="math display">\[ \left(\frac{\partial z}{\partial
+x}\right)_y = -\left(\frac{\partial z}{\partial y}\right)_x
+\left(\frac{\partial y}{\partial x}\right)_z \]</span></p>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="whitebox">
+<h3>
+Example 4.1
+</h3>
+<p>
+Derive an expression for <span class="math display">\[
+\frac{\alpha}{\kappa_T} \]</span> in terms of derivatives of
+thermodynamic functions using out partial derivative relations.
+</p>
+</div>
+<hr />
+<a href=joule-experiment.html>
+<h2>
+The Joule Experiment
+</h2>
+<p></a></p>
+<hr />
+<h3>
+The Joule-Thomson Experiment
+</h3>
+<p>
+<img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleThomsonApparatus.png alt="A depiction of the apparatus described on this slide.">
+</p>
+<ul>
+<li>
+Gas is pumped into the left side of a lead pipe at a constant rate
+</li>
+<li>
+The pipe has a constriction in it so that the pressure in the left
+chamber is higher than the right chamber.
+</li>
+<li>
+The temperature is monitored in each chamber.
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+The Joule-Thomson Coefficient
+</h3>
+<ul>
+<li>
+Not all gases cool as they expand from high pressure to low pressure
+</li>
+<li>
+The sign of <span class="math inline">\(\Delta T\)</span> can be
+determined by measuring the Joule-Thomson coefficient <span
+class="math display">\[ \mu_{JT}\equiv \left(\frac{\partial T}{\partial
+P}\right)_H \]</span>
+</li>
+</ul>
+<p>
+<img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleThomsonCoefficientBehavior.png height="300" alt="A plot of temperature versus pressure. The is a region at moderate temperature where the Joule-Thomson Coefficient is positive. Elsewhere it is negative.">
+</p>
+<hr />
+<h3>
+Working to Make <span class="math inline">\(\mu_{JT}\)</span> Measurable
+</h3>
+<ul>
+<li>
+We can develop an equation for calculating <span
+class="math inline">\(\mu_{JT}\)</span> in terms of measurable
+quantities. But first
+</li>
+</ul>
+<p>
+<span class="math display">\[ dH \equiv \left(\frac{\partial H}{\partial
+P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]</span>
+We will show later that <span class="math display">\[
+\left(\frac{\partial H}{\partial P}\right)_TdP = -T\left(\frac{\partial
+V}{\partial T}\right)_P+V \]</span> The second term of which can be
+written in terms of the isobaric thermal expansivity <span
+class="math display">\[ \left(\frac{\partial H}{\partial P}\right)_TdP =
+-TV\alpha +V = V\left(1-T\alpha\right) \]</span> <span
+class="math display">\[ dH \equiv \left(\frac{\partial H}{\partial
+P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]</span>
+Divide each side by <span class="math inline">\(dP\)</span> and
+constrain to constant <span class="math inline">\(H\)</span> <span
+class="math display">\[ \left. \frac{dH}{dP}\right|_H =
+\left(\frac{\partial H}{\partial
+P}\right)_T\,\left.\frac{dP}{dP}\right|_H + \left(\frac{\partial
+H}{\partial T}\right)_P\,\left.\frac{dT}{dP}\right|_H \]</span> This can
+be simplified <span class="math display">\[ 0 = \left(\frac{\partial
+H}{\partial P}\right)_T\,\left(1\right) + \left(\frac{\partial
+H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H
+\]</span> <span class="math display">\[ 0 = V \left(1-T\alpha\right) +
+\left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial
+T}{\partial P}\right)_H \]</span> <span class="math display">\[ 0 = V
+\left(1-T\alpha\right) + \left(\frac{\partial H}{\partial
+T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]</span> We
+can use out definitions of <span
+class="math inline">\(C_P=\left(\frac{\partial H}{\partial
+T}\right)_P\)</span> and <span
+class="math inline">\(\mu_{JT}=\left(\frac{\partial T}{\partial
+P}\right)_H\)</span> <span class="math display">\[ 0 = V
+\left(1-T\alpha\right) + C_P\mu_{JT} \]</span> This can be solved to
+find that <span class="math display">\[ \mu_{JT} = \frac{V\left(T\alpha
+-1\right)}{C_P} = \frac{V}{C_P}\left(T\alpha-1\right) \]</span>
+</p>
+<hr />
+<h2>
+Useful Definitions and Relationships
+</h2>
+<ul>
+<li>
+Heat Capacities <span class="math display">\[ C_V\equiv
+\left(\frac{\partial U}{\partial T}\right)_V \;\text{ and }\; C_P\equiv
+\left(\frac{\partial H}{\partial T}\right)_P \]</span>
+</li>
+<li>
+Coefficient of Thermal Expansion <span class="math display">\[ \alpha
+\equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P
+\Rightarrow \left(\frac{\partial V}{\partial T}\right)_P =
+V\alpha\]</span>
+</li>
+<li>
+Isothermal Compressibility <span class="math display">\[ \kappa_T \equiv
+-\frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T \Rightarrow
+\left(\frac{\partial V}{\partial P}\right)_T = -V\kappa_T \]</span>
+</li>
+<li>
+We have also seen that <span class="math display">\[ \begin{eqnarray}
+\frac{\alpha}{\kappa_T} &amp;=&amp; \left(\frac{\partial P}{\partial
+T}\right)_V \\
+\left(\frac{\partial U}{\partial V}\right)_T &amp;=&amp;
+T\left(\frac{\partial P}{\partial T}\right)_V-P \\
+\left(\frac{\partial H}{\partial P}\right)_T &amp;=&amp;
+-T\left(\frac{\partial V}{\partial T}\right)_P+V
+\end{eqnarray} \]</span>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="graybox">
+<h3>
+Example 4.4
+</h3>
+<p>
+Derive an expression for <span
+class="math inline">\(\left(\frac{\partial H}{\partial
+V}\right)_T\)</span> in terms of measurable quantities.
+</p>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="graybox">
+<h3>
+Example 4.5
+</h3>
+<p>
+Calculate <span class="math inline">\(\Delta H\)</span> for the
+isothermal compression of ethanol which will decrease the molar volume
+by <span class="math inline">\(0.010\frac{L}{mol}\)</span> at <span
+class="math inline">\(300K\)</span>. (For ethanol, <span
+class="math inline">\(\alpha=1.1\times 10^{-3}K^{-1}\)</span> and <span
+class="math inline">\(\kappa_T=7.9\times 10^{-5}atm^{-1}\)</span>).
+</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

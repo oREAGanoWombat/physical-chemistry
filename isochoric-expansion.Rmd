@@ -19,5 +19,5 @@ $${C_{V}}\equiv \left ( \frac{\delta U}{\delta T} \right )_{V}$$
 :::: {.whitebox data-latex=""}
 **Example 3.4**
 
-Consider $1.00mol$ of an ideal gas with $C_V=\frac{3}{2}R$ that undergoes a temperature change from $125K$ to $255K$ at a constant volume of $10.0L$. Calculate $\DeltaU$, $q$, and $w$ for this change.
+Consider $1.00mol$ of an ideal gas with $C_V=\frac{3}{2}R$ that undergoes a temperature change from $125K$ to $255K$ at a constant volume of $10.0L$. Calculate $\Delta U$, $q$, and $w$ for this change.
 ::::

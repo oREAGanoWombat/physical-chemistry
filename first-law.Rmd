@@ -311,8 +311,8 @@ $$
 
 -   Because standard formation reactions begin with elements in their standard states we can simplify Hess' Law
 -   The reaction enthalpy can be calculated from the standard formation reaction enthalpy by 
-$$\Delta H_{rxn}= \sum_{products }\upsilon \cdot \Delta H_f^o - \sum_{reactants} \upsilon \cdot \Delta H_f^o$$
-  where $\upsilon$ is the stoichiometric coefficient of a species in the balanced chemical reaction
+$$\Delta H_{rxn}= \sum_{products }\upsilon \cdot \Delta H_f^o - \sum_{reactants} \nu \cdot \Delta H_f^o$$
+  where $\nu$ is the stoichiometric coefficient of a species in the balanced chemical reaction
 
 ------------------------------------------------------------------------
 

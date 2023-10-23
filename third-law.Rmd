@@ -1,0 +1,23 @@
+---
+title: "<center>Third Law of Thermodynamics</center>"
+output: html_document
+---
+
+---
+
+<ul>
+<li>One consequence of Boltzmann's proposal is thata perfectly ordered crystal will have an entropy of 0.</li>
+<li>This gives us the <bold>Third Law of Thermodynamics</bold>
+<blockquote><font size="5">The entropy of a perfectly ordered crystal at \(0K\) is zero.</font></blockquote>
+</li>
+<li>This suggests that absolute molar entropies can be calculated \( S=\int_0^T \frac{C}{T}\, dT \)</li>
+</ul>
+
+$\;$
+
+::: {.whitebox data-latex=""}
+<h3>Example 5.7</h3>
+
+<p>\({SiO_2}\) is found to have a molar heat capacity of \(0.777 \frac{J}{mol\,K}\) at \(15 K\) (Yamashita, et al., 2001). Calculate the molar entropy of \({SiO_2}\) at \(15 K\).</p>
+<p>Note: The Debye extrapolation says that at low temperatures, the heat capacity is proportional to \(T^3\), that is \(C\propto T^3 \therefore C = aT^3\) at very low temperatures.</p>
+:::

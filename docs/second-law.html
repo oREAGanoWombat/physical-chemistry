@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title> Second Law of Thermodynamics </title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Physical Chemistry Guidebook</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="ideal-gas.html">Ideal Gas Law</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    1st Law of Thermodynamics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="first-law-to-work.html">Putting the 1st Law to Work</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="second-law.html">2nd Law of Thermodynamics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Gas Expansion
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="irreversible-expansion.html">Irreversible</a>
+    </li>
+    <li>
+      <a href="reversible-expansion.html">Reversible</a>
+    </li>
+    <li>
+      <a href="adiabatic-expansion.html">Adiabatic</a>
+    </li>
+    <li>
+      <a href="isobaric-expansion.html">Isobaric</a>
+    </li>
+    <li>
+      <a href="isochoric-expansion.html">Isochoric</a>
+    </li>
+    <li>
+      <a href="isothermal-expansion.html">Isothermal</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore"><center><br />
+Second Law of Thermodynamics<br />
+</center></h1>
+
+</div>
+
+
+<hr />
+<ul>
+<li>
+Rudolph Causius wrote in “The Mechanical Theory of Heat” (1879) that
+<blockquote>
+<font size="5">
+<p>
+The fundamental laws of the universe which correspond to the two
+fundamental theorems of the mechanical theory of heat:
+</p>
+<p>
+<ol style="list-style-type: decimal">
+<li>The energy of the universe is constant.
+</p>
+<p>
+<ol start="2" style="list-style-type: decimal">
+<li>The entropy of the universe tends to a maximum.
+</p>
+</font>
+</blockquote>
+</li>
+</ul></li>
+</ol></li>
+</ol>
+<hr />
+<h3>
+The Second Law is Still Studied
+</h3>
+<p>
+In a 2010 interview, Sean M. Carroll from CalTech said
+</p>
+<blockquote>
+<font size="5">
+<p>
+I’m trying to understand how time works. And that’s a huge question that
+has lots of different aspects to it. A lot of them go back to Einstein
+and spacetime and how we measure time using clocks. But the particular
+aspect of time that I’m interested in is the arrow of time: the fact
+that the past is different from the future. We remember the past but we
+don’t remember the future. There are irreversible processes. There are
+things that happen, like you turn an egg into an omelet, but you can’t
+turn an omelet into an egg.
+</p>
+</font>
+</blockquote>
+<hr />
+<h2>
+Heat Engines and the Carnot Cycle
+</h2>
+<h3>
+Sadi Carnot (1796-1832)
+</h3>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 75%; float: left;">
+<ul>
+<li>
+A French physicist, engineer, and officer in Napoleon’s army.
+</li>
+<li>
+He was interested in improving the steam engine
+</li>
+<li>
+To simplify his analysis of the inner working of the engine he developed
+a <bold>heat engine</bold> which is a useful construct for examining
+engine efficiency
+</li>
+</ul>
+</div>
+<div style="margin-left: 76%;">
+<p><img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/SadiCarnot.jpg alt="A photograph of Sadi Carnot."></p>
+</div>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+A Heat Engine
+</h3>
+<p>
+<img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/HeatEngine.png alt="A heat engine takes in heat and converts it to work.">
+</p>
+<ul>
+<li>
+Nature prevents the complete conversion of energy into work
+</li>
+<li>
+Leads to an important statement of <bold>The Second Law of
+Thermodynamics</bold>
+<blockquote>
+<font size="5">It is impossible to convert heat into an equivalent
+amount of work without some other changes occurring in the
+universe.</font>
+</blockquote>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+A More Realistic Heat Engine
+</h3>
+<p>
+<img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/MoreRealisticHeatEngine.png alt="A heat engine takes in heat and converts it to work with the loss of some heat.">
+</p>
+<ul>
+<li>
+The fraction of the heat provided to the engine to the amount of work
+the engine produces defines the efficiency of the engine.
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+The Carnot Engine
+</h3>
+<p>
+<img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/CarnotEngine.png alt="A heat engine takes in heat and converts it to work with the loss of some heat. Input heat is drawn from a hot reservoir while the lost heat is dumped into a cold reservoir.">
+</p>
+<ul>
+<li>
+A Carnot engine draws heat from a hot resevoir converts it to work and
+heat, the output heat is dumping into the cold resevoir.
+</li>
+</ul>
+<hr />
+<h3>
+The Carnot Cycle
+</h3>
+<ul>
+<li>
+The Carnot Cycle is the cycle of steps that the engine undergoes in
+order to draw in heat and convert it to work in the Carnot engine.
+</li>
+<li>
+The steps of the Carnot Cycle are:
+<ol>
+<li>
+Isothermal expansion (<span class="math inline">\(dU=0\)</span>) from
+<span class="math inline">\(P_1\)</span> and <span
+class="math inline">\(V_1\)</span> to <span
+class="math inline">\(P_2\)</span> and <span
+class="math inline">\(V_2\)</span> at <span
+class="math inline">\(T_h\)</span> (temperature of the hot reservoir)
+</li>
+<li>
+Adiabatic expansion (<span class="math inline">\(q=0\)</span>) from
+<span class="math inline">\(P_2,\, V_2,\, T_h\)</span> to <span
+class="math inline">\(P_3,\,V_3,\,T_c\)</span>
+</li>
+<li>
+Isothermal compression (<span class="math inline">\(dU=0\)</span>) from
+<span class="math inline">\(P_3\)</span> and <span
+class="math inline">\(V_3\)</span> to <span
+class="math inline">\(P_4\)</span> and <span
+class="math inline">\(V_4\)</span> at <span
+class="math inline">\(T_c\)</span> (temperature of the cold reservoir)
+</li>
+<li>
+Adiabatic compression (<span class="math inline">\(q=0\)</span>) from
+<span class="math inline">\(P_4,\,V_4,\,T_c\)</span> to <span
+class="math inline">\(P_1,\,V_1,\,T_h\)</span>
+</li>
+</ol>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="whitebox">
+<h3>
+Plot of Carnot Cycle
+</h3>
+<p><br />
+</p>
+<p>
+<img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/PlotOfCarnotCycle.png alt="A plot of the Carnot Cycle in terms of pressure versus molar volume.">
+</p>
+</div>
+<hr />
+<h3>
+Anaylsis of the Carnot Cycle
+</h3>
+<ul>
+<li>
+The cycle is closed (ending state and initial state are equal)
+</li>
+<li>
+This means that any state function must have no net change
+</li>
+<li>
+The efficiency can be expressed as <span class="math display">\[
+\epsilon=\frac{w_{net}}{\left| q_h\right|}=\frac{|w_1|+\cdots
++|w_n|}{|q_h|} \]</span>
+</li>
+</ul>
+<table>
+<tr>
+<th style="text-align:center">
+Step
+</th>
+<th style="text-align:center">
+Heat
+</th>
+<th style="text-align:center">
+Work
+</th>
+</tr>
+<tr>
+<td style="text-align:center">
+1
+</td>
+<td style="text-align:center">
+     <span
+class="math inline">\(q_h=-nRT_h\ln\left(\frac{V_2}{V_1}\right)\)</span>     
+</td>
+<td style="text-align:center">
+<span
+class="math inline">\(nRT_h\ln\left(\frac{V_2}{V_1}\right)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center">
+2
+</td>
+<td style="text-align:center">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="text-align:center">
+<span class="math inline">\(-C_V\left(T_c-T_h\right)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center">
+3
+</td>
+<td style="text-align:center">
+     <span
+class="math inline">\(q_c=-nRT_c\ln\left(\frac{V_4}{V_3}\right)\)</span>     
+</td>
+<td style="text-align:center">
+<span
+class="math inline">\(nRT_c\ln\left(\frac{V_4}{V_3}\right)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center">
+4
+</td>
+<td style="text-align:center">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="text-align:center">
+<span class="math inline">\(C_V\left(T_h-T_c\right)\)</span>
+</td>
+</tr>
+</table>
+<p>
+<span class="math display">\[ w_{tot} = nRT_h \ln
+\left(\frac{V_2}{V_1}\right) + nRT_c \ln \left(\frac{V_4}{V_3}\right)
+\]</span>
+</p>
+<p>
+<span class="math display">\[ \epsilon = \frac{w_{tot}}{\left|
+q_h\right|} = \frac{nRT_h \ln \left(\frac{V_2}{V_1}\right) + nRT_c \ln
+\left(\frac{V_4}{V_3}\right)}{nRT_h\ln\left(\frac{V_2}{V_1}\right)}
+\]</span>
+</p>
+<hr />
+<h3>
+Simplification
+</h3>
+<ul>
+<li>
+When we studied the first law of thermodynamics we learned that <span
+class="math display">\[ \left( \frac{V_2}{V_1} \right) = \left(
+\frac{T_2}{T_1} \right)^{-\frac{C_V}{R}} \Rightarrow \left(
+\frac{V_2}{V_1} \right) = \left( \frac{T_1}{T_2} \right)^{\frac{C_V}{R}}
+\]</span>
+</li>
+<li>
+This means that <span class="math display">\[ \text{Step 2:
+}\frac{V_3}{V_2} = \left(\frac{T_h}{T_c}\right)^\frac{C_V}{R} \;\;\text{
+and }\;\; \text{Step 4: }\frac{V_1}{V_4} =
+\left(\frac{T_c}{T_h}\right)^\frac{C_V}{R} \]</span> and step 4 can be
+rearranged to <span class="math display">\[ \frac{V_4}{V_1} =
+\left(\frac{T_h}{T_c}\right)^\frac{C_V}{R} \]</span>
+</li>
+<li>
+The right-hand side (RHS) of those equations are the same so we can
+equal their left-hand sides (LHS) <span class="math display">\[
+\frac{V_3}{V_2}=\frac{V_4}{V_1} \Rightarrow
+\frac{V_2}{V_1}=\frac{V_3}{V_4} \]</span>
+</li>
+<li>
+Now we can simplify our efficiency equation <span
+class="math display">\[ \begin{eqnarray}
+\epsilon &amp;=&amp; \frac{nRT_h \ln \left(\frac{V_2}{V_1}\right) +
+nRT_c \ln
+\left(\frac{V_4}{V_3}\right)}{nRT_h\ln\left(\frac{V_2}{V_1}\right)} \\
+&amp;=&amp; \frac{nRT_h \ln \left(\frac{V_2}{V_1}\right) - nRT_c \ln
+\left(\frac{V_2}{V_1}\right)}{nRT_h\ln\left(\frac{V_2}{V_1}\right)} =
+\frac{T_h-T_c}{T_h}=\epsilon_{max}
+\end{eqnarray} \]</span>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="whitebox">
+<h3>
+Example 5.1
+</h3>
+<p>
+What is the maximum efficiency of a freezer set to keep ice cream at a
+cool <span class="math inline">\(-10^\circ C\)</span>, which it is
+operating in a room that is <span class="math inline">\(25^\circ
+C\)</span>? What is the minimum amount of energy needed to remove <span
+class="math inline">\(1.0 J\)</span> from the freezer and dissipate it
+into the room?
+</p>
+</div>
+<hr />
+<h2>
+Entropy
+</h2>
+<h3>
+Total Heat Transfered
+</h3>
+<ul>
+<li>
+In the Carnot cycle the total heat transfered is <span
+class="math display">\[
+q_{tot}=nRT_h\ln\left(\frac{V_2}{V_1}\right)+nRT_c\ln\left(\frac{V_4}{V_3}\right)
+\]</span>
+</li>
+<li>
+Using our volume relationship we found earlier that <span
+class="math inline">\(\frac{V_2}{V_1}=\frac{V_3}{V_4}\)</span> <span
+class="math display">\[
+q_{tot}=nRT_h\ln\left(\frac{V_2}{V_1}\right)-nRT_c\ln\left(\frac{V_2}{V_1}\right)
+\]</span>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="graybox">
+<h3>
+Analysis of Total Heat Transfered
+</h3>
+<p>
+<span class="math display">\[
+q_{tot}=nRT_h\ln\left(\frac{V_2}{V_1}\right)-nRT_c\ln\left(\frac{V_2}{V_1}\right)
+\]</span>
+</p>
+<ul>
+<li>
+This is a cyclic process so state variables must have zero total change
+</li>
+<li>
+The total heat transfered, however, will only be zero if <span
+class="math inline">\(T_h=T_c\)</span> which makes no sense
+</li>
+<li>
+This means that heat, <span class="math inline">\(q\)</span>, is not a
+state variable
+</li>
+<li>
+If temperature is the problem, what if we divide it away? <span
+class="math display">\[ \sum_i \frac{q_i}{T_i} =
+\frac{nRT_h\ln\left(\frac{V_2}{V_1}\right)}{T_h} -
+\frac{nRT_c\ln\left(\frac{V_2}{V_1}\right)}{T_c}=0 \]</span>
+</li>
+</ul>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+A New State Function - Entropy
+</h3>
+<p>
+<span class="math display">\[ \sum_i \frac{q_i}{T_i} =
+\frac{nRT_h\ln\left(\frac{V_2}{V_1}\right)}{T_h} -
+\frac{nRT_c\ln\left(\frac{V_2}{V_1}\right)}{T_c}=0 \]</span>
+</p>
+<ul>
+<li>
+The sum shows that the ratio of heat to temperature change is a state
+function
+</li>
+<li>
+This leads to our definition of entropy, a state function <span
+class="math display">\[ dS \equiv \frac{dq_{rev}}{T} \]</span>
+</li>
+<li>
+In general, <span class="math inline">\(dq_{rev}&gt;dq\)</span> since
+the reversible pathway defines the maximum heat flow
+</li>
+</ul>
+<hr />
+<h2>
+Calculating Entropy Changes
+</h2>
+<h3>
+<a href=isothermal-expansion.html>Isothermal Changes</a>
+</h3>
+<p>
+Consider an isothermal expansion of an ideal gas from <span
+class="math inline">\(V_1\)</span> to <span
+class="math inline">\(V_2\)</span> <span class="math display">\[
+\begin{eqnarray}
+dq &amp;=&amp; \frac{nRT}{V}dV \\
+\frac{dq}{T} &amp;=&amp; nR\frac{dV}{V} \\
+\Delta S = \int \frac{dq}{T} &amp;=&amp; nR\int_{V_1}^{V_2} \frac{dV}{V}
+= nR\ln \left(\frac{V_2}{V_1}\right)
+\end{eqnarray} \]</span>
+</p>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="whitebox">
+<h3>
+Example 5.2
+</h3>
+<p>
+Calculate the entropy change for <span class="math inline">\(1.00
+mol\)</span> of an ideal gas expanding isothermally from a volume of
+<span class="math inline">\(24.4 L\)</span> to <span
+class="math inline">\(48.8 L\)</span>.
+</p>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+<a href=isobaric-expansion.html>Isobaric Changes</a>
+</h3>
+<p>
+For isobaric changes <span class="math display">\[ dq=nC_P\,dT \]</span>
+so <span class="math display">\[ \begin{eqnarray}
+\frac{dq}{T} &amp;=&amp; nC_P\frac{dT}{T} \\
+\Delta S = \int \frac{dq}{T} &amp;=&amp; nC_P \int_{T_1}^{T_2}
+\frac{dT}{T} = nC_P\ln \left(\frac{T_2}{T_1}\right)
+\end{eqnarray} \]</span> If instead, <span class="math inline">\(C_P =
+a+bT+\frac{c}{T_2}\)</span> then <span class="math display">\[ \Delta S
+= n \left[ a\ln\left(\frac{T_2}{T_1}\right) + b\left(T_2-T_1\right)
++\frac{c}{3}\left(\frac{1}{T_2^4}-\frac{1}{T_1^4}\right) \right]
+\]</span>
+</p>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+<a href=isochoric-expansion.html>Isochoric Changes</a>
+</h3>
+<p>
+For isochoric changes <span class="math display">\[ dq=nC_V\,dT
+\]</span> so <span class="math display">\[ \begin{eqnarray}
+\frac{dq}{T} &amp;=&amp; nC_V\frac{dT}{T} \\
+\Delta S = \int \frac{dq}{T} &amp;=&amp; nC_V \int_{T_1}^{T_2}
+\frac{dT}{T} \\
+\Delta S &amp;=&amp; nC_V \ln \left(\frac{T_2}{T_1}\right)
+\end{eqnarray} \]</span>
+</p>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+<a href=adiabatic-expansion.html>Adiabatic Changes</a>
+</h3>
+<ul>
+<li>
+In adiabatic changes <span class="math inline">\(dq=0\)</span>.
+Therefore, in adiabatic changes <span class="math display">\[
+dS=\frac{dq}{T}=0 \]</span>
+</li>
+<li>
+We often refer to adiabatic processes as isentropic
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<h3>
+Phase Changes
+</h3>
+<ul>
+<li>
+We experience a lot of phase changes in chemistry
+</li>
+<li>
+The common phase changes that we experience occur open to our atmosphere
+</li>
+<li>
+Being open to the atmosphere means that it is isobaric
+</li>
+<li>
+We can calculate the change in entropy as <span class="math display">\[
+\Delta S = \frac{q}{T}=\frac{\Delta H_{phase}}{T} \]</span>
+</li>
+</ul>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="whitebox">
+<h3>
+Example 5.3
+</h3>
+<p>
+The enthalpy of fusion for water is <span class="math inline">\(6.01
+\bfrac{kJ}{mol}\)</span>. Calculate the entropy change for <span
+class="math inline">\(1.0 mole\)</span> of ice melting to form liquid at
+<span class="math inline">\(273 K\)</span>.
+</p>
+</div>
+<hr />
+<h2>
+Comparing the System and the Surroundings
+</h2>
+<div class="whitebox">
+<h3>
+Example 5.4
+</h3>
+<p>
+Consider <span class="math inline">\(18.02 g\)</span> (<span
+class="math inline">\(1.00 mol\)</span>) of ice melting at <span
+class="math inline">\(273 K\)</span> in a room that is <span
+class="math inline">\(298 K\)</span>. Calculate <span
+class="math inline">\(\Delta S\)</span> for the ice, the surrounding
+room, and of the universe. (<span class="math inline">\(\Delta H_{fus} =
+6.01 \frac{kJ}{mol}\)</span>)
+</p>
+</div>
+<p><span class="math inline">\(\;\)</span></p>
+<div class="whitebox">
+<h3>
+Example 5.5
+</h3>
+<p>
+A <span class="math inline">\(10.0 g\)</span> piece of metal (<span
+class="math inline">\(C = 0.250 \frac{J}{g\,^\circ C}\)</span>)
+initially at <span class="math inline">\(95^\circ C\)</span> is placed
+in <span class="math inline">\(25.0 g\)</span> of water initially at
+<span class="math inline">\(15^\circ C\)</span> in an insulated
+container. Calculate the final temperature of the metal and water once
+the system has reached thermal equilibrium. Also, calculate the entropy
+change for the metal, the water, and the entire system.
+</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

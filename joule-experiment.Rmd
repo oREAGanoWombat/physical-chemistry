@@ -1,0 +1,59 @@
+---
+title: "The Joule Experiment"
+output: html_document
+---
+<p> \[ dU = \left(\frac{\partial U}{\partial V}\right)_T dV + \left(\frac{\partial U}{\partial T}\right)_V dT \] </p>
+<ul>
+            <li>The second partial derivative is \(C_V\)
+                \[ dU = \left(\frac{\partial U}{\partial V}\right)_T dV + C_V\, dT \]
+            </li>
+            <li>What is the first term? Internal pressure
+                \[ \pi_T = \left(\frac{\partial U}{\partial V}\right)_T \]
+            </li>
+        </ul>
+        
+---
+
+<h3>Measuring the Internal Pressure</h3>
+<ul>
+<li>James Prescott Joule (1818-1889) set out to measure the internal pressure</li>
+</ul>
+<p><img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleExperiment.png alt="Two copper spheres, A and B, connected by a stopcock emmersed in a tank of water containing a thermometer. Sphere A is filled with a sample of gas while sphere B is evacuated."></p>
+<ul>
+<li>A has a sample gas while B is evacuated</li>
+</ul>
+
+---
+
+<h3>The Experiment</h3>
+<ul>
+<li>When the stopcock is opened, the gas expands into sphere B so \(\Delta V>0\)</li>
+<li>Since B originally had a vacuum, this expansion is done against no external pressure so \(P_{ext}=0\,\therefore\, dw=-P_{ext}\,dV=0\)</li>
+<li>We know that \(dU=dq+dw\) and that \(dU=\pi_T\,dV + C_V\,dT\) so
+\[ \pi_T\,dV + C_V\, dT = dq + dw = dq \]
+</li>
+<li>Joule observed no temperature change in the water so he concluded that \(dq=0\) and \(dT=0\)</li>
+<li>Since \(dV>0\) (the gas is expanding), Joule concluded that \(\pi_T=0\)</li>
+<li>In truth, \(dT\ne 0\), but it was too small for Joule to detect it</li>
+</ul>
+<p>\[ \pi_T=\left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]</p>
+
+---
+
+::: {.whitebox data-latex=""}
+<h3>Example 4.2: Internal Pressure of an Ideal Gas</h3>
+
+<p>What is the internal pressure, \(\pi_T\), of an ideal gas?</p>
+<p>\[ \left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]</p>
+<p>\[ PV_m=RT \]</p>
+:::
+
+$\;$
+
+::: {.whitebox data-latex=""}
+h3>Example 4.3: Internal Pressure of a van der Waals Gas</h3>
+
+<p>What is the internal pressure, \(\pi_T\), of a van der Waals gas?</p>
+<p>\[ \left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]</p>
+<p>\[ P=\frac{RT}{V_m-b} - \frac{a}{V_m^2} \]</p>
+:::

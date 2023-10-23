@@ -41,3 +41,7 @@ Consider $1.00mol$ of an ideal gas with $C_P=\frac{5}{2}$ that changes from temp
 
 Calculate $q$, $w$, $\Delta U$, and $\Delta H$ for $1.00mol$ of an ideal gas expanding reversibly and isothermally at $273K$ from a volume of $22.4L$ and a pressure of $1.00atm$ to a volume of $44.8L$ and a pressure of $0.500atm$.
 ::::
+
+---
+
+<a href=first-law-to-work.html> <h1> Putting the First Law to Work </h1> </a>

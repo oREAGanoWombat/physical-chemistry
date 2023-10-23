@@ -11,7 +11,7 @@
 
 <meta name="author" content="Reagan Womack" />
 
-<meta name="date" content="2023-10-18" />
+<meta name="date" content="2023-10-19" />
 
 <title>test</title>
 
@@ -292,39 +292,420 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">test</h1>
 <h4 class="author">Reagan Womack</h4>
-<h4 class="date">2023-10-18</h4>
+<h4 class="date">2023-10-19</h4>
 
 </div>
 
 
 <html>
-<button id="showButton">
-Solving Reversible Gas Expansions
-</button>
-<div id="content" style="display: none;">
-<div class="whitebox">
-<p><span
-class="math display">\[{dw}=-P_{\text{ext}}{dV}=-P{dV}\]</span></p>
-<p><span class="math display">\[
-  \begin{align}
-  w &amp;= -\int {PdV} \\
-    &amp;= -\int \left ( \frac{nRT}{V} \right ) \\
-    &amp;= -{nRT} \int_{V_1}^{V_2} \frac{dV}{V} =
--{nRT}\ln\frac{V_2}{V_1} \\
-  \end{align}
-  \]</span></p>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1024, user-scalable=no">
+<pre><code>&lt;title&gt;First Law&lt;/title&gt;
+
+&lt;script src=&#39;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML&#39; async&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Config({
+        TeX: {
+            Macros: {
+                AA: &quot;{\\unicode{x212B}}&quot;
+            }
+        },
+        &quot;HTML-CSS&quot;: {
+            preferredFont: &quot;STIX&quot;,
+            webFont: &quot;STIX-Web&quot;
+        }
+    });
+    
+    MathJax.Hub.Register.StartupHook(&quot;TeX Jax Ready&quot;,function () {
+        var MML = MathJax.ElementJax.mml,
+        TEX = MathJax.InputJax.TeX;
+
+        TEX.Definitions.macros.bfrac = &quot;myBevelFraction&quot;;
+
+        TEX.Parse.Augment({
+            myBevelFraction: function (name) {
+                var num = this.ParseArg(name),
+                den = this.ParseArg(name);
+                this.Push(MML.mfrac(num,den).With({bevelled: true}));
+            }
+        });
+    });
+&lt;/script&gt;
+
+&lt;!-- Required stylesheet --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/core/deck.core.css&quot;&gt;
+
+\( \newcommand{\xrightleftharpoons}[2]{\overset{#1}{\underset{#2}{\rightleftharpoons}}} \)
+\( \newcommand{\conc}[1]{\left[\mathrm{#1}\right]} \)
+\( \newcommand{\chem}[1]{\mathrm{#1}} \)
+\( \newcommand{\expect}[1]{\left&lt; #1 \right&gt;} \)
+
+&lt;!-- Extension CSS files go here. Remove or add as needed. --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/extensions/goto/deck.goto.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/extensions/menu/deck.menu.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/extensions/navigation/deck.navigation.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/extensions/status/deck.status.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/extensions/scale/deck.scale.css&quot;&gt;
+
+&lt;!-- Style theme. More available in /themes/style/ or create your own. --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/themes/style/web-2.0.css&quot;&gt;
+
+&lt;!-- Transition theme. More available in /themes/transition/ or create your own. --&gt;
+&lt;!--&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/themes/transition/horizontal-slide.css&quot;&gt;--&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/themes/transition/fade.css&quot;&gt;
+
+&lt;!-- Basic black and white print styles --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;print&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/core/print.css&quot;&gt;
+
+&lt;!-- Required Modernizr file --&gt;
+&lt;script src=&quot;https://shaunmwilliams.com/deck.js-latest/modernizr.custom.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shaunmwilliams.com/deck.js-latest/slides.css&quot;&gt;</code></pre>
+</head>
+<body>
+<div class="deck-container">
+<pre><code>&lt;!-- Begin slides. Just make elements with a class of slide. --&gt;
+
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h1&gt;
+        &lt;p style=&quot;font-size:90px&quot;&gt;Putting the First Law to Work&lt;/p&gt;
+    &lt;/h1&gt;
+    &lt;p&gt;Shaun Williams, PhD&lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h2&gt;Total and Exact Differentials&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;We now know that \(C_V\equiv \left(\frac{\partial U}{\partial T}\right)_V\)&lt;/li&gt;
+        &lt;li&gt;This suggests that \( U\) is very dependent on \( V\) and \( T\)&lt;/li&gt;
+        &lt;li&gt;This suggests that to change \( U\) we can change these variables&lt;/li&gt;
+        &lt;li&gt;This gives us a total differential
+            \[ dU = \left(\frac{\partial U}{\partial V}\right)_T dV + \left(\frac{\partial U}{\partial T}\right)_V dT\]
+        &lt;/li&gt;
+        &lt;li&gt;This means that
+            \[ \Delta U = \int_{V_1}^{V_2} \left(\frac{\partial U}{\partial V}\right)_T dV + \int_{T_1}^{T_2} \left(\frac{\partial U}{\partial T}\right)_V dT \]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Exact Differentials&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Let&#39;s say we have a differential
+            \[ df(x,y) = P\,dx + Q\,dy \]
+        &lt;/li&gt;
+        &lt;li&gt;If these variable obey the Euler Relation
+            \[ \left(\frac{\partial P}{\partial y}\right)_x = \left(\frac{\partial Q}{\partial x}\right)_y \]
+            then that differential will be an exact differential
+        &lt;/li&gt;
+        &lt;li&gt;We can illustrate this with the ideal gas law
+            \[ P(V,T) = \frac{RT}{V} \]
+        &lt;/li&gt;
+        &lt;li&gt;The differentils of all the state functions will be exact.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h2&gt;Compressivity and Expansivity&lt;/h2&gt;
+    &lt;h3&gt;Isothermal Compressibility (\(\kappa_T\))&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;It is important that we understand how compressible substances are&lt;/li&gt;
+        &lt;li&gt;To quantify how compressible substances are we can look at the fractional differential change in volume due to a change in pressure
+            \[ \kappa_T \equiv -\frac{1}{V} \left(\frac{\partial V}{\partial P}\right)_T \]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Isobaric Thermal Expansivity (\(\alpha\))&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;It is also important to understand how the volume of a substance responds to temperature&lt;/li&gt;
+        &lt;li&gt;To quantify this, we define the isobaric thermal expansivity (sometimes called the expansion coefficient)
+            \[ \alpha \equiv \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_P \]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Partial Derivatives: The Reciprocal Rule&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Consider a function \( F\) of three variables \(x\), \(y\), and \(z\) such that we can write \( F(x,y,z)=0 \)&lt;/li&gt;
+        &lt;li&gt;This means that we can specify the system by knowning two of the three variables, or
+            \[ dz = \left(\frac{\partial z}{\partial x}\right)_y dx + \left(\frac{\partial z}{\partial y}\right)_x dy \text{ and } dy = \left(\frac{\partial y}{\partial x}\right)_z dx + \left(\frac{\partial y}{\partial z}\right)_x dz \]
+        &lt;/li&gt;
+        &lt;li&gt;After a lot of calculus we find that
+            \[ 1=\left(\frac{\partial z}{\partial y}\right)_x \left(\frac{\partial y}{\partial z}\right)_x \text{ or } \left(\frac{\partial z}{\partial y}\right)_x = \frac{1}{\left(\frac{\partial y}{\partial z}\right)_x}\]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Partial Derivatives: The Cyclic Permutation Rule&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Along similar lines to the last we, we can generate a very useful partial differential relationship&lt;/li&gt;
+    &lt;/ul&gt;
+    \[ \left(\frac{\partial z}{\partial x}\right)_y = -\left(\frac{\partial z}{\partial y}\right)_x \left(\frac{\partial y}{\partial x}\right)_z \]
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Example 4.1&lt;/h3&gt;
+    &lt;p&gt;
+        Derive an expression for
+        \[ \frac{\alpha}{\kappa_T} \]
+        in terms of derivatives of thermodynamic functions using out partial derivative relations.
+    &lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h2&gt;The Joule Experiment&lt;/h2&gt;
+    &lt;p&gt; \[ dU = \left(\frac{\partial U}{\partial V}\right)_T dV + \left(\frac{\partial U}{\partial T}\right)_V dT \] &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;The second partial derivative is \(C_V\)
+            \[ dU = \left(\frac{\partial U}{\partial V}\right)_T dV + C_V\, dT \]
+        &lt;/li&gt;
+        &lt;li&gt;What is the first term? Internal pressure
+            \[ \pi_T = \left(\frac{\partial U}{\partial V}\right)_T \]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Measuring the Internal Pressure&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;James Prescott Joule (1818-1889) set out to measure the internal pressure&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;img src=&quot;./figures/PuttingTheFirstLawToWork/JouleExperiment.png&quot; alt=&quot;Two copper spheres, A and B, connected by a stopcock emmersed in a tank of water containing a thermometer. Sphere A is filled with a sample of gas while sphere B is evacuated.&quot;&gt;&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;A has a sample gas while B is evacuated&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;The Experiment&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;When the stopcock is opened, the gas expands into sphere B so \(\Delta V&gt;0\)&lt;/li&gt;
+        &lt;li&gt;Since B originally had a vacuum, this expansion is done against no external pressure so \(P_{ext}=0\,\therefore\, dw=-P_{ext}\,dV=0\)&lt;/li&gt;
+        &lt;li&gt;We know that \(dU=dq+dw\) and that \(dU=\pi_T\,dV + C_V\,dT\) so
+            \[ \pi_T\,dV + C_V\, dT = dq + dw = dq \]
+        &lt;/li&gt;
+        &lt;li&gt;Joule observed no temperature change in the water so he concluded that \(dq=0\) and \(dT=0\)&lt;/li&gt;
+        &lt;li&gt;Since \(dV&gt;0\) (the gas is expanding), Joule concluded that \(\pi_T=0\)&lt;/li&gt;
+        &lt;li&gt;In truth, \(dT\ne 0\), but it was too small for Joule to detect it&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;\[ \pi_T=\left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]&lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Example 4.2: Internal Pressure of an Ideal Gas&lt;/h3&gt;
+    &lt;p&gt;What is the internal pressure, \(\pi_T\), of an ideal gas?&lt;/p&gt;
+    &lt;p&gt;\[ \left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]&lt;/p&gt;
+    &lt;p&gt;\[ PV_m=RT \]&lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Example 4.3: Internal Pressure of a van der Waals Gas&lt;/h3&gt;
+    &lt;p&gt;What is the internal pressure, \(\pi_T\), of a van der Waals gas?&lt;/p&gt;
+    &lt;p&gt;\[ \left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]&lt;/p&gt;
+    &lt;p&gt;\[ P=\frac{RT}{V_m-b} - \frac{a}{V_m^2} \]&lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h2&gt;The Joule-Thomson Effect&lt;/h2&gt;
+    &lt;div style=&quot;width: 100%; overflow: hidden;&quot;&gt;
+        &lt;div style=&quot;width: 50%; float: left;&quot;&gt;
+            &lt;img src=&quot;./figures/PuttingTheFirstLawToWork/JohnPrescottJoule.jpg&quot; alt=&quot;A photograph of John Prescott Joule.&quot;&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-left: 51%;&quot;&gt; 
+            &lt;img src=&quot;./figures/PuttingTheFirstLawToWork/WiliamThomson.jpg&quot; alt=&quot;A photograph of William Thomson&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;In 1852, Joule Began working with William Thomson (who would later become Lord Kelvin)&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;The Joule-Thomson Experiment&lt;/h3&gt;
+    &lt;p&gt;&lt;img src=&quot;./figures/PuttingTheFirstLawToWork/JouleThomsonApparatus.png&quot; alt=&quot;A depiction of the apparatus described on this slide.&quot;&gt;&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Gas is pumped into the left side of a lead pipe at a constant rate&lt;/li&gt;
+        &lt;li&gt;The pipe has a constriction in it so that the pressure in the left chamber is higher than the right chamber.&lt;/li&gt;
+        &lt;li&gt;The temperature is monitored in each chamber.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;The Joule-Thomson Coefficient&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Not all gases cool as they expand from high pressure to low pressure&lt;/li&gt;
+        &lt;li&gt;The sign of \(\Delta T\) can be determined by measuring the Joule-Thomson coefficient
+            \[ \mu_{JT}\equiv \left(\frac{\partial T}{\partial P}\right)_H \]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;img src=&quot;./figures/PuttingTheFirstLawToWork/JouleThomsonCoefficientBehavior.png&quot; height=&quot;300&quot; alt=&quot;A plot of temperature versus pressure. The is a region at moderate temperature where the Joule-Thomson Coefficient is positive. Elsewhere it is negative.&quot;&gt;&lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Working to Make \(\mu_{JT}\) Measurable&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;We can develop an equation for calculating \(\mu_{JT}\) in terms of measurable quantities. But first&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        \[ dH \equiv \left(\frac{\partial H}{\partial P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]
+        We will show later that
+        \[ \left(\frac{\partial H}{\partial P}\right)_TdP = -T\left(\frac{\partial V}{\partial T}\right)_P+V \]
+        The second term of which can be written in terms of the isobaric thermal expansivity
+        \[ \left(\frac{\partial H}{\partial P}\right)_TdP = -TV\alpha +V = V\left(1-T\alpha\right) \]
+    &lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;More Derivation&lt;/h3&gt;
+    &lt;p&gt;
+        \[ dH \equiv \left(\frac{\partial H}{\partial P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]
+        Divide each side by \(dP\) and constrain to constant \(H\)
+        \[ \left. \frac{dH}{dP}\right|_H = \left(\frac{\partial H}{\partial P}\right)_T\,\left.\frac{dP}{dP}\right|_H + \left(\frac{\partial H}{\partial T}\right)_P\,\left.\frac{dT}{dP}\right|_H \]
+        This can be simplified
+        \[ 0 = \left(\frac{\partial H}{\partial P}\right)_T\,\left(1\right) + \left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]
+        \[ 0 = V \left(1-T\alpha\right) + \left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]
+    &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Completing the Derivation&lt;/h3&gt;
+    &lt;p&gt;
+        \[ 0 = V \left(1-T\alpha\right) + \left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]
+        We can use out definitions of \( C_P=\left(\frac{\partial H}{\partial T}\right)_P \) and \( \mu_{JT}=\left(\frac{\partial T}{\partial P}\right)_H \)
+        \[ 0 = V \left(1-T\alpha\right) + C_P\mu_{JT} \]
+        This can be solved to find that
+        \[ \mu_{JT} = \frac{V\left(T\alpha -1\right)}{C_P} = \frac{V}{C_P}\left(T\alpha-1\right) \]
+    &lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h2&gt;Useful Definitions and Relationships&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Heat Capacities
+            \[ C_V\equiv \left(\frac{\partial U}{\partial T}\right)_V \;\text{ and }\; C_P\equiv \left(\frac{\partial H}{\partial T}\right)_P \]
+        &lt;/li&gt;
+        &lt;li&gt;Coefficient of Thermal Expansion
+            \[ \alpha \equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P \Rightarrow \left(\frac{\partial V}{\partial T}\right)_P = V\alpha\]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;More Definitions and Relations&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Isothermal Compressibility
+            \[ \kappa_T \equiv -\frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T \Rightarrow \left(\frac{\partial V}{\partial P}\right)_T = -V\kappa_T \]
+        &lt;/li&gt;
+        &lt;li&gt;We have also seen that
+            \[ \begin{eqnarray}
+                \frac{\alpha}{\kappa_T} &amp;=&amp; \left(\frac{\partial P}{\partial T}\right)_V \\
+                \left(\frac{\partial U}{\partial V}\right)_T &amp;=&amp; T\left(\frac{\partial P}{\partial T}\right)_V-P \\
+                \left(\frac{\partial H}{\partial P}\right)_T &amp;=&amp; -T\left(\frac{\partial V}{\partial T}\right)_P+V
+            \end{eqnarray} \]
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Example 4.4&lt;/h3&gt;
+    &lt;p&gt;Derive an expression for \(\left(\frac{\partial H}{\partial V}\right)_T\) in terms of measurable quantities.&lt;/p&gt;
+&lt;/section&gt;
+    
+&lt;section class=&quot;slide&quot;&gt;
+    &lt;h3&gt;Example 4.5&lt;/h3&gt;
+    &lt;p&gt;Calculate \(\Delta H\) for the isothermal compression of ethanol which will decrease the molar volume by \(0.010\bfrac{L}{mol}\) at \(300K\). (For ethanol, \(\alpha=1.1\times 10^{-3}K^{-1}\) and \(\kappa_T=7.9\times 10^{-5}atm^{-1}\)).&lt;/p&gt;
+&lt;/section&gt;
+    
+    
+    </code></pre>
+<!--
+    <section class="slide">
+        <h2>Work and Heat</h2>
+        <h3>James P. Joule (1818-1889)</h3>
+        <div style="width: 100%; overflow: hidden;">
+            <div style="width: 50%; float: left;">
+                <ul>
+                    <li>Joule was one of the pioneers of modern thermodynamics.</li>
+                    <li>Among his experiments, Joule attempted to measure the effect of work on the temperature of water.</li>
+                </ul>
+            </div>
+            <div style="margin-left: 51%;"> 
+                <img src="./figures/FirstLawOfThermodynamics/Joule_Apparatus.jpg" alt="Joule's apparatus consisted of fan blades attached to a center rod which could be rotated.">
+            </div>
+        </div>
+    </section>
+        
+    <section class="slide">
+        <h3>The First Law of Thermodynamics</h3>
+        <blockquote><font size="6">The capacity of a system to do work is increased by heating the system or doing work on it.</font></blockquote>
+        <ul>
+            <li>The first law translates to
+                \[ 
+                    \begin{eqnarray}
+                        \Delta U &=& q+w \\
+                        dU &=& dq+dw
+                    \end{eqnarray}
+                \]
+            </li>
+        </ul>
+    </section>
+            
+    <section class="slide">
+        <h3>Example 4.6</h3>
+        <p>What is the work done by \( 1.00\, mol \) of an ideal gas expanding reversibly from a volume of \( 22.4\, L \) to a volume of \( 44.8\, L \) at a constant temperature of \( 273\, K \)?</p>
+        <p><img src="./figures/FirstLawOfThermodynamics/AreaUnderPVCurve.png" alt="The area under the curve of pressure versus volume is the work done during the expansion or contraction."></p>
+    </section>
+-->
+<pre><code>&lt;!-- End slides. --&gt;
+
+&lt;!-- Begin extension snippets. Add or remove as needed. --&gt;
+
+&lt;!-- deck.navigation snippet --&gt;
+&lt;div aria-role=&quot;navigation&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;deck-prev-link&quot; title=&quot;Previous&quot;&gt;&amp;#8592;&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;deck-next-link&quot; title=&quot;Next&quot;&gt;&amp;#8594;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- deck.status snippet --&gt;
+&lt;p class=&quot;deck-status&quot; aria-role=&quot;status&quot;&gt;
+    &lt;span class=&quot;deck-status-current&quot;&gt;&lt;/span&gt;
+    /
+    &lt;span class=&quot;deck-status-total&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- deck.goto snippet --&gt;
+&lt;form action=&quot;.&quot; method=&quot;get&quot; class=&quot;goto-form&quot;&gt;
+    &lt;label for=&quot;goto-slide&quot;&gt;Go to slide:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;slidenum&quot; id=&quot;goto-slide&quot; list=&quot;goto-datalist&quot;&gt;
+    &lt;datalist id=&quot;goto-datalist&quot;&gt;&lt;/datalist&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Go&quot;&gt;
+&lt;/form&gt;
+
+&lt;!-- End extension snippets. --&gt;</code></pre>
 </div>
-</div>
+<!-- Required JS files. -->
+<script src="https://shaunmwilliams.com/deck.js-latest/jquery.min.js"></script>
+<script src="https://shaunmwilliams.com/deck.js-latest/core/deck.core.js"></script>
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="https://shaunmwilliams.com/deck.js-latest/extensions/menu/deck.menu.js"></script>
+<script src="https://shaunmwilliams.com/deck.js-latest/extensions/goto/deck.goto.js"></script>
+<script src="https://shaunmwilliams.com/deck.js-latest/extensions/status/deck.status.js"></script>
+<script src="https://shaunmwilliams.com/deck.js-latest/extensions/navigation/deck.navigation.js"></script>
+<script src="https://shaunmwilliams.com/deck.js-latest/extensions/scale/deck.scale.js"></script>
+<!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-document.getElementById("showButton").addEventListener("click", function() {
-  var content = document.getElementById("content");
-  if (content.style.display === "none" || content.style.display === "") {
-    content.style.display = "block";
-  } else {
-    content.style.display = "none";
-  }
-});
+    $(function() {
+        $.deck('.slide');
+    });
 </script>
+</body>
 </html>
 
 
