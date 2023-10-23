@@ -7,9 +7,6 @@ navbar:
       href: ideal-gas.html
     - text: "1st Law of Thermodynamics"
       href: first-law.html
-      menu: 
-        - text: "Putting the 1st Law to Work"
-          href: first-law-to-work.html
     - text: "2nd Law of Thermodynamics"
       href: second-law.html
     - text: "3rd Law of Thermodynamics"
