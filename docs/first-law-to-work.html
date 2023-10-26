@@ -246,8 +246,20 @@ $(document).ready(function () {
         <li>
   <a href="ideal-gas.html">Ideal Gas Law</a>
 </li>
-<li>
-  <a href="first-law.html">1st Law of Thermodynamics</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    1st Law of Thermodynamics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="first-law.html">1&lt;sup&gt;st&lt;/sup&gt; Law of Thermodynamics</a>
+    </li>
+    <li>
+      <a href="first-law-to-work.html">Putting the 1st Law to Work</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="second-law.html">2nd Law of Thermodynamics</a>
@@ -263,13 +275,16 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="gas-expansion.html">Gas Expansion</a>
+    </li>
+    <li>
       <a href="irreversible-expansion.html">Irreversible</a>
     </li>
     <li>
       <a href="reversible-expansion.html">Reversible</a>
     </li>
     <li>
-      <a href="adiabatic-expansion.html">Adiabatic</a>
+      <a href="adiabatic-pathways.html">Adiabatic</a>
     </li>
     <li>
       <a href="isobaric-expansion.html">Isobaric</a>
@@ -299,6 +314,7 @@ $(document).ready(function () {
 </div>
 
 
+<p><font size="4"></p>
 <hr />
 <div id="total-and-exact-differentials" class="section level1">
 <h1>Total and Exact Differentials</h1>
@@ -440,144 +456,7 @@ The Joule Experiment
 </h2>
 <p></a></p>
 <hr />
-<h3>
-The Joule-Thomson Experiment
-</h3>
-<p>
-<img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleThomsonApparatus.png alt="A depiction of the apparatus described on this slide.">
-</p>
-<ul>
-<li>
-Gas is pumped into the left side of a lead pipe at a constant rate
-</li>
-<li>
-The pipe has a constriction in it so that the pressure in the left
-chamber is higher than the right chamber.
-</li>
-<li>
-The temperature is monitored in each chamber.
-</li>
-</ul>
-<p><span class="math inline">\(\;\)</span></p>
-<h3>
-The Joule-Thomson Coefficient
-</h3>
-<ul>
-<li>
-Not all gases cool as they expand from high pressure to low pressure
-</li>
-<li>
-The sign of <span class="math inline">\(\Delta T\)</span> can be
-determined by measuring the Joule-Thomson coefficient <span
-class="math display">\[ \mu_{JT}\equiv \left(\frac{\partial T}{\partial
-P}\right)_H \]</span>
-</li>
-</ul>
-<p>
-<img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleThomsonCoefficientBehavior.png height="300" alt="A plot of temperature versus pressure. The is a region at moderate temperature where the Joule-Thomson Coefficient is positive. Elsewhere it is negative.">
-</p>
-<hr />
-<h3>
-Working to Make <span class="math inline">\(\mu_{JT}\)</span> Measurable
-</h3>
-<ul>
-<li>
-We can develop an equation for calculating <span
-class="math inline">\(\mu_{JT}\)</span> in terms of measurable
-quantities. But first
-</li>
-</ul>
-<p>
-<span class="math display">\[ dH \equiv \left(\frac{\partial H}{\partial
-P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]</span>
-We will show later that <span class="math display">\[
-\left(\frac{\partial H}{\partial P}\right)_TdP = -T\left(\frac{\partial
-V}{\partial T}\right)_P+V \]</span> The second term of which can be
-written in terms of the isobaric thermal expansivity <span
-class="math display">\[ \left(\frac{\partial H}{\partial P}\right)_TdP =
--TV\alpha +V = V\left(1-T\alpha\right) \]</span> <span
-class="math display">\[ dH \equiv \left(\frac{\partial H}{\partial
-P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]</span>
-Divide each side by <span class="math inline">\(dP\)</span> and
-constrain to constant <span class="math inline">\(H\)</span> <span
-class="math display">\[ \left. \frac{dH}{dP}\right|_H =
-\left(\frac{\partial H}{\partial
-P}\right)_T\,\left.\frac{dP}{dP}\right|_H + \left(\frac{\partial
-H}{\partial T}\right)_P\,\left.\frac{dT}{dP}\right|_H \]</span> This can
-be simplified <span class="math display">\[ 0 = \left(\frac{\partial
-H}{\partial P}\right)_T\,\left(1\right) + \left(\frac{\partial
-H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H
-\]</span> <span class="math display">\[ 0 = V \left(1-T\alpha\right) +
-\left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial
-T}{\partial P}\right)_H \]</span> <span class="math display">\[ 0 = V
-\left(1-T\alpha\right) + \left(\frac{\partial H}{\partial
-T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]</span> We
-can use out definitions of <span
-class="math inline">\(C_P=\left(\frac{\partial H}{\partial
-T}\right)_P\)</span> and <span
-class="math inline">\(\mu_{JT}=\left(\frac{\partial T}{\partial
-P}\right)_H\)</span> <span class="math display">\[ 0 = V
-\left(1-T\alpha\right) + C_P\mu_{JT} \]</span> This can be solved to
-find that <span class="math display">\[ \mu_{JT} = \frac{V\left(T\alpha
--1\right)}{C_P} = \frac{V}{C_P}\left(T\alpha-1\right) \]</span>
-</p>
-<hr />
-<h2>
-Useful Definitions and Relationships
-</h2>
-<ul>
-<li>
-Heat Capacities <span class="math display">\[ C_V\equiv
-\left(\frac{\partial U}{\partial T}\right)_V \;\text{ and }\; C_P\equiv
-\left(\frac{\partial H}{\partial T}\right)_P \]</span>
-</li>
-<li>
-Coefficient of Thermal Expansion <span class="math display">\[ \alpha
-\equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P
-\Rightarrow \left(\frac{\partial V}{\partial T}\right)_P =
-V\alpha\]</span>
-</li>
-<li>
-Isothermal Compressibility <span class="math display">\[ \kappa_T \equiv
--\frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T \Rightarrow
-\left(\frac{\partial V}{\partial P}\right)_T = -V\kappa_T \]</span>
-</li>
-<li>
-We have also seen that <span class="math display">\[ \begin{eqnarray}
-\frac{\alpha}{\kappa_T} &amp;=&amp; \left(\frac{\partial P}{\partial
-T}\right)_V \\
-\left(\frac{\partial U}{\partial V}\right)_T &amp;=&amp;
-T\left(\frac{\partial P}{\partial T}\right)_V-P \\
-\left(\frac{\partial H}{\partial P}\right)_T &amp;=&amp;
--T\left(\frac{\partial V}{\partial T}\right)_P+V
-\end{eqnarray} \]</span>
-</li>
-</ul>
-<p><span class="math inline">\(\;\)</span></p>
-<div class="graybox">
-<h3>
-Example 4.4
-</h3>
-<p>
-Derive an expression for <span
-class="math inline">\(\left(\frac{\partial H}{\partial
-V}\right)_T\)</span> in terms of measurable quantities.
-</p>
-</div>
-<p><span class="math inline">\(\;\)</span></p>
-<div class="graybox">
-<h3>
-Example 4.5
-</h3>
-<p>
-Calculate <span class="math inline">\(\Delta H\)</span> for the
-isothermal compression of ethanol which will decrease the molar volume
-by <span class="math inline">\(0.010\frac{L}{mol}\)</span> at <span
-class="math inline">\(300K\)</span>. (For ethanol, <span
-class="math inline">\(\alpha=1.1\times 10^{-3}K^{-1}\)</span> and <span
-class="math inline">\(\kappa_T=7.9\times 10^{-5}atm^{-1}\)</span>).
-</p>
-</div>
+<p></font></p>
 </div>
 
 

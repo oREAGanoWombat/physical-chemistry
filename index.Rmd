@@ -2,3 +2,5 @@
 title: "Physical Chemistry Guidebook"
 date: "Last Update: `r Sys.Date()`"
 ---
+
+The majority of the content available through this git site is taken from Dr. Shaun Williams' <a href=https://shaunmwilliams.com/>website</a>.

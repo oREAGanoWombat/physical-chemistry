@@ -2,6 +2,9 @@
 title: "The Joule Experiment"
 output: html_document
 ---
+
+<font size="4">
+
 <p> \[ dU = \left(\frac{\partial U}{\partial V}\right)_T dV + \left(\frac{\partial U}{\partial T}\right)_V dT \] </p>
 <ul>
             <li>The second partial derivative is \(C_V\)
@@ -46,14 +49,111 @@ output: html_document
 <p>What is the internal pressure, \(\pi_T\), of an ideal gas?</p>
 <p>\[ \left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]</p>
 <p>\[ PV_m=RT \]</p>
+
+<markcyan>For an ideal gas, $\pi_T=0$</markcyan>
 :::
 
 $\;$
 
 ::: {.whitebox data-latex=""}
-h3>Example 4.3: Internal Pressure of a van der Waals Gas</h3>
+<h3>Example 4.3: Internal Pressure of a van der Waals Gas</h3>
 
 <p>What is the internal pressure, \(\pi_T\), of a van der Waals gas?</p>
 <p>\[ \left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial P}{\partial T}\right)_V-P \]</p>
 <p>\[ P=\frac{RT}{V_m-b} - \frac{a}{V_m^2} \]</p>
+
+<markcyan>For a van der Waals Gas, $\pi_T=\frac{a}{V_m^2}$</markcyan>
 :::
+
+---
+
+<center><h2><mark>The Joule-Thomson Effect</mark></h2></center>
+- In 1852, Joule Began working with William Thomson (who would later become Lord Kelvin)
+
+<h3>The Joule-Thomson Experiment</h3>
+<p><img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleThomsonApparatus.png alt="A depiction of the apparatus described on this slide."></p>
+<ul>
+<li>Gas is pumped into the left side of a lead pipe at a constant rate</li>
+<li>The pipe has a constriction in it so that the pressure in the left chamber is higher than the right chamber.</li>
+<li>The temperature is monitored in each chamber.</li>
+</ul>
+<b>In theory, the temperature should increase when the volume increases. Since this experiment allowed volume to increase and pressure to decrease, they were able to observe how temperature is affected when both of these variables are changed.</b>
+
+$\;$
+
+<h3>The Joule-Thomson Coefficient</h3>
+<ul>
+<li><b>Not all gases cool as they expand from high pressure to low pressure</b></li>
+<li>The sign of \(\Delta T\) can be determined by measuring the Joule-Thomson coefficient ($\mu_{JT}$)
+\[ \mu_{JT}\equiv \left(\frac{\partial T}{\partial P}\right)_H \]
+</li>
+</ul>
+<p><img src=https://shaunmwilliams.com/CHE303/figures/PuttingTheFirstLawToWork/JouleThomsonCoefficientBehavior.png height="300" alt="A plot of temperature versus pressure. The is a region at moderate temperature where the Joule-Thomson Coefficient is positive. Elsewhere it is negative."></p>
+
+---
+
+<h3>Working to Make \(\mu_{JT}\) Measurable</h3>
+<ul>
+<li>We can develop an equation for calculating \(\mu_{JT}\) in terms of measurable quantities. But first</li>
+</ul>
+<p>
+\[ dH \equiv \left(\frac{\partial H}{\partial P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]
+We will show later that
+\[ \left(\frac{\partial H}{\partial P}\right)_TdP = -T\left(\frac{\partial V}{\partial T}\right)_P+V \]
+The second term of which can be written in terms of the isobaric thermal expansivity
+\[ \left(\frac{\partial H}{\partial P}\right)_TdP = -TV\alpha +V = V\left(1-T\alpha\right) \]
+\[ dH \equiv \left(\frac{\partial H}{\partial P}\right)_TdP + \left(\frac{\partial H}{\partial T}\right)_PdT \]
+Divide each side by \(dP\) and constrain to constant \(H\)
+\[ \left. \frac{dH}{dP}\right|_H = \left(\frac{\partial H}{\partial P}\right)_T\,\left.\frac{dP}{dP}\right|_H + \left(\frac{\partial H}{\partial T}\right)_P\,\left.\frac{dT}{dP}\right|_H \]
+This can be simplified
+\[ 0 = \left(\frac{\partial H}{\partial P}\right)_T\,\left(1\right) + \left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]
+\[ 0 = V \left(1-T\alpha\right) + \left(\frac{\partial H}{\partial T}\right)_P\,\left(\frac{\partial T}{\partial P}\right)_H \]
+We can use out definitions of \( C_P=\left(\frac{\partial H}{\partial T}\right)_P \) and <mark>\( \mu_{JT}=\left(\frac{\partial T}{\partial P}\right)_H \)</mark>
+\[ 0 = V \left(1-T\alpha\right) + C_P\mu_{JT} \]
+This can be solved to find that
+\[ \mu_{JT} = \frac{V\left(T\alpha -1\right)}{C_P} = \frac{V}{C_P}\left(T\alpha-1\right) \]
+</p>
+
+---
+
+<h2>Useful Definitions and Relationships</h2>
+<ul>
+<li>Heat Capacities
+\[ C_V\equiv \left(\frac{\partial U}{\partial T}\right)_V \;\text{ and }\; C_P\equiv \left(\frac{\partial H}{\partial T}\right)_P \]
+</li>
+<li>Coefficient of Thermal <a href=gas-expansion.html>Expansion</a>
+\[ \alpha \equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P \Rightarrow \left(\frac{\partial V}{\partial T}\right)_P = V\alpha\]
+</li>
+<li><a href=isothermal-expansion.html>Isothermal</a> Compressibility
+\[ \kappa_T \equiv -\frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T \Rightarrow \left(\frac{\partial V}{\partial P}\right)_T = -V\kappa_T \]
+</li>
+<li>We have also seen that
+\[ \begin{eqnarray}
+\frac{\alpha}{\kappa_T} &=& \left(\frac{\partial P}{\partial T}\right)_V \\
+\left(\frac{\partial U}{\partial V}\right)_T &=& T\left(\frac{\partial P}{\partial T}\right)_V-P \\
+\left(\frac{\partial H}{\partial P}\right)_T &=& -T\left(\frac{\partial V}{\partial T}\right)_P+V
+\end{eqnarray} \]
+</li>
+</ul>
+
+$\;$
+
+::: {.whitebox data-latex=""}
+<h3>Example 4.4</h3>
+      
+<p>Derive an expression for \(\left(\frac{\partial H}{\partial V}\right)_T\) in terms of measurable quantities.</p>
+
+<markcyan>$\left( \frac{\partial H}{\partial V} \right)_T=\frac{1}{\kappa_T}(T\alpha-1)$</markcyan>
+:::
+
+$\;$
+
+::: {.whitebox data-latex=""}
+<h3>Example 4.5</h3>
+        
+<p>Calculate \(\Delta H\) for the isothermal compression of ethanol which will decrease the molar volume by \(0.010\frac{L}{mol}\) at \(300K\). (For ethanol, \(\alpha=1.1\times 10^{-3}K^{-1}\) and \(\kappa_T=7.9\times 10^{-5}atm^{-1}\)).</p>
+
+<markcyan>$\Delta H=8.6 \frac{kJ}{mol}$</markcyan>
+:::
+
+</font>

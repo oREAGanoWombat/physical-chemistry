@@ -321,3 +321,9 @@ $$\Delta H_{rxn}= \sum_{products }\upsilon \cdot \Delta H_f^o - \sum_{reactants}
 <h3><b> Ionization Reactions </b></h3>
 
 </a>
+
+---
+
+<a href=first-law-to-work.html> <h2> Putting the $1^{st}$ Law to Work </h2> </a>
+
+---

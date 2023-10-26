@@ -246,8 +246,20 @@ $(document).ready(function () {
         <li>
   <a href="ideal-gas.html">Ideal Gas Law</a>
 </li>
-<li>
-  <a href="first-law.html">1st Law of Thermodynamics</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    1st Law of Thermodynamics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="first-law.html">1&lt;sup&gt;st&lt;/sup&gt; Law of Thermodynamics</a>
+    </li>
+    <li>
+      <a href="first-law-to-work.html">Putting the 1st Law to Work</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="second-law.html">2nd Law of Thermodynamics</a>
@@ -263,13 +275,16 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="gas-expansion.html">Gas Expansion</a>
+    </li>
+    <li>
       <a href="irreversible-expansion.html">Irreversible</a>
     </li>
     <li>
       <a href="reversible-expansion.html">Reversible</a>
     </li>
     <li>
-      <a href="adiabatic-expansion.html">Adiabatic</a>
+      <a href="adiabatic-pathways.html">Adiabatic</a>
     </li>
     <li>
       <a href="isobaric-expansion.html">Isobaric</a>
@@ -301,12 +316,13 @@ Second Law of Thermodynamics<br />
 </div>
 
 
+<p><font size="4"></p>
 <hr />
 <ul>
 <li>
 Rudolph Causius wrote in “The Mechanical Theory of Heat” (1879) that
 <blockquote>
-<font size="5">
+<font size="3"><i>
 <p>
 The fundamental laws of the universe which correspond to the two
 fundamental theorems of the mechanical theory of heat:
@@ -319,37 +335,36 @@ fundamental theorems of the mechanical theory of heat:
 <ol start="2" style="list-style-type: decimal">
 <li>The entropy of the universe tends to a maximum.
 </p>
-</font>
+</i></font>
 </blockquote>
 </li>
 </ul></li>
 </ol></li>
 </ol>
 <hr />
-<h3>
-The Second Law is Still Studied
-</h3>
+<div id="the-second-law-is-still-studied" class="section level3">
+<h3>The Second Law is Still Studied</h3>
 <p>
 In a 2010 interview, Sean M. Carroll from CalTech said
 </p>
 <blockquote>
-<font size="5">
+<font size="3"><i>
 <p>
 I’m trying to understand how time works. And that’s a huge question that
 has lots of different aspects to it. A lot of them go back to Einstein
 and spacetime and how we measure time using clocks. But the particular
 aspect of time that I’m interested in is the arrow of time: the fact
 that the past is different from the future. We remember the past but we
-don’t remember the future. There are irreversible processes. There are
-things that happen, like you turn an egg into an omelet, but you can’t
-turn an omelet into an egg.
+don’t remember the future. <b>There are irreversible processes. There
+are things that happen, like you turn an egg into an omelet, but you
+can’t turn an omelet into an egg.</b>
 </p>
-</font>
+</i></font>
 </blockquote>
 <hr />
-<h2>
-Heat Engines and the Carnot Cycle
-</h2>
+</div>
+<div id="heat-engines-and-the-carnot-cycle" class="section level2">
+<h2>Heat Engines and the Carnot Cycle</h2>
 <h3>
 Sadi Carnot (1796-1832)
 </h3>
@@ -374,9 +389,8 @@ engine efficiency
 </div>
 </div>
 <p><span class="math inline">\(\;\)</span></p>
-<h3>
-A Heat Engine
-</h3>
+<div id="a-heat-engine" class="section level3">
+<h3>A Heat Engine</h3>
 <p>
 <img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/HeatEngine.png alt="A heat engine takes in heat and converts it to work.">
 </p>
@@ -388,16 +402,16 @@ Nature prevents the complete conversion of energy into work
 Leads to an important statement of <bold>The Second Law of
 Thermodynamics</bold>
 <blockquote>
-<font size="5">It is impossible to convert heat into an equivalent
+<font size="3"><i>It is impossible to convert heat into an equivalent
 amount of work without some other changes occurring in the
-universe.</font>
+universe.</i></font>
 </blockquote>
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<h3>
-A More Realistic Heat Engine
-</h3>
+</div>
+<div id="a-more-realistic-heat-engine" class="section level3">
+<h3>A More Realistic Heat Engine</h3>
 <p>
 <img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/MoreRealisticHeatEngine.png alt="A heat engine takes in heat and converts it to work with the loss of some heat.">
 </p>
@@ -408,9 +422,9 @@ the engine produces defines the efficiency of the engine.
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<h3>
-The Carnot Engine
-</h3>
+</div>
+<div id="the-carnot-engine" class="section level3">
+<h3>The Carnot Engine</h3>
 <p>
 <img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/CarnotEngine.png alt="A heat engine takes in heat and converts it to work with the loss of some heat. Input heat is drawn from a hot reservoir while the lost heat is dumped into a cold reservoir.">
 </p>
@@ -421,9 +435,9 @@ heat, the output heat is dumping into the cold resevoir.
 </li>
 </ul>
 <hr />
-<h3>
-The Carnot Cycle
-</h3>
+</div>
+<div id="the-carnot-cycle" class="section level3">
+<h3>The Carnot Cycle</h3>
 <ul>
 <li>
 The Carnot Cycle is the cycle of steps that the engine undergoes in
@@ -462,20 +476,16 @@ class="math inline">\(P_1,\,V_1,\,T_h\)</span>
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="whitebox">
-<h3>
-Plot of Carnot Cycle
-</h3>
-<p><br />
-</p>
+</div>
+<div id="plot-of-carnot-cycle" class="section level3 whitebox">
+<h3>Plot of Carnot Cycle</h3>
 <p>
 <img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/PlotOfCarnotCycle.png alt="A plot of the Carnot Cycle in terms of pressure versus molar volume.">
 </p>
 </div>
 <hr />
-<h3>
-Anaylsis of the Carnot Cycle
-</h3>
+<div id="anaylsis-of-the-carnot-cycle" class="section level3">
+<h3>Anaylsis of the Carnot Cycle</h3>
 <ul>
 <li>
 The cycle is closed (ending state and initial state are equal)
@@ -562,9 +572,9 @@ q_h\right|} = \frac{nRT_h \ln \left(\frac{V_2}{V_1}\right) + nRT_c \ln
 \]</span>
 </p>
 <hr />
-<h3>
-Simplification
-</h3>
+</div>
+<div id="simplification" class="section level3">
+<h3>Simplification</h3>
 <ul>
 <li>
 When we studied the first law of thermodynamics we learned that <span
@@ -600,10 +610,9 @@ nRT_c \ln
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="whitebox">
-<h3>
-Example 5.1
-</h3>
+</div>
+<div id="example-5.1" class="section level3 whitebox">
+<h3>Example 5.1</h3>
 <p>
 What is the maximum efficiency of a freezer set to keep ice cream at a
 cool <span class="math inline">\(-10^\circ C\)</span>, which it is
@@ -614,9 +623,9 @@ into the room?
 </p>
 </div>
 <hr />
-<h2>
-Entropy
-</h2>
+</div>
+<div id="entropy" class="section level2">
+<h2>Entropy</h2>
 <h3>
 Total Heat Transfered
 </h3>
@@ -636,10 +645,9 @@ q_{tot}=nRT_h\ln\left(\frac{V_2}{V_1}\right)-nRT_c\ln\left(\frac{V_2}{V_1}\right
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="graybox">
-<h3>
-Analysis of Total Heat Transfered
-</h3>
+<div id="analysis-of-total-heat-transfered"
+class="section level3 graybox">
+<h3>Analysis of Total Heat Transfered</h3>
 <p>
 <span class="math display">\[
 q_{tot}=nRT_h\ln\left(\frac{V_2}{V_1}\right)-nRT_c\ln\left(\frac{V_2}{V_1}\right)
@@ -666,9 +674,8 @@ class="math display">\[ \sum_i \frac{q_i}{T_i} =
 </ul>
 </div>
 <p><span class="math inline">\(\;\)</span></p>
-<h3>
-A New State Function - Entropy
-</h3>
+<div id="a-new-state-function---entropy" class="section level3">
+<h3>A New State Function - Entropy</h3>
 <p>
 <span class="math display">\[ \sum_i \frac{q_i}{T_i} =
 \frac{nRT_h\ln\left(\frac{V_2}{V_1}\right)}{T_h} -
@@ -689,9 +696,10 @@ the reversible pathway defines the maximum heat flow
 </li>
 </ul>
 <hr />
-<h2>
-Calculating Entropy Changes
-</h2>
+</div>
+</div>
+<div id="calculating-entropy-changes" class="section level2">
+<h2>Calculating Entropy Changes</h2>
 <h3>
 <a href=isothermal-expansion.html>Isothermal Changes</a>
 </h3>
@@ -707,10 +715,8 @@ dq &amp;=&amp; \frac{nRT}{V}dV \\
 \end{eqnarray} \]</span>
 </p>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="whitebox">
-<h3>
-Example 5.2
-</h3>
+<div id="example-5.2" class="section level3 whitebox">
+<h3>Example 5.2</h3>
 <p>
 Calculate the entropy change for <span class="math inline">\(1.00
 mol\)</span> of an ideal gas expanding isothermally from a volume of
@@ -749,7 +755,7 @@ For isochoric changes <span class="math display">\[ dq=nC_V\,dT
 </p>
 <p><span class="math inline">\(\;\)</span></p>
 <h3>
-<a href=adiabatic-expansion.html>Adiabatic Changes</a>
+<a href=adiabatic-pathways.html>Adiabatic Changes</a>
 </h3>
 <ul>
 <li>
@@ -762,9 +768,8 @@ We often refer to adiabatic processes as isentropic
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<h3>
-Phase Changes
-</h3>
+<div id="phase-changes" class="section level3">
+<h3>Phase Changes</h3>
 <ul>
 <li>
 We experience a lot of phase changes in chemistry
@@ -781,10 +786,9 @@ We can calculate the change in entropy as <span class="math display">\[
 </li>
 </ul>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="whitebox">
-<h3>
-Example 5.3
-</h3>
+</div>
+<div id="example-5.3" class="section level3 whitebox">
+<h3>Example 5.3</h3>
 <p>
 The enthalpy of fusion for water is <span class="math inline">\(6.01
 \frac{kJ}{mol}\)</span>. Calculate the entropy change for <span
@@ -793,13 +797,12 @@ class="math inline">\(1.0 mole\)</span> of ice melting to form liquid at
 </p>
 </div>
 <hr />
-<h2>
-Comparing the System and the Surroundings
-</h2>
-<div class="whitebox">
-<h3>
-Example 5.4
-</h3>
+</div>
+<div id="comparing-the-system-and-the-surroundings"
+class="section level2">
+<h2>Comparing the System and the Surroundings</h2>
+<div id="example-5.4" class="section level3 whitebox">
+<h3>Example 5.4</h3>
 <p>
 Consider <span class="math inline">\(18.02 g\)</span> (<span
 class="math inline">\(1.00 mol\)</span>) of ice melting at <span
@@ -811,10 +814,8 @@ room, and of the universe. (<span class="math inline">\(\Delta H_{fus} =
 </p>
 </div>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="whitebox">
-<h3>
-Example 5.5
-</h3>
+<div id="example-5.5" class="section level3 whitebox">
+<h3>Example 5.5</h3>
 <p>
 A <span class="math inline">\(10.0 g\)</span> piece of metal (<span
 class="math inline">\(C = 0.250 \frac{J}{g\,^\circ C}\)</span>)
@@ -827,9 +828,8 @@ change for the metal, the water, and the entire system.
 </p>
 </div>
 <hr />
-<h3>
-A New Way to State the 2<sup>nd</sup> Law
-</h3>
+<div id="a-new-way-to-state-the-2nd-law" class="section level3">
+<h3>A New Way to State the 2<sup>nd</sup> Law</h3>
 <ul>
 <li>
 We know that <span class="math display">\[ \Delta S_{univ} = \Delta
@@ -851,9 +851,9 @@ time
 </li>
 </ul>
 <hr />
-<h3>
-Clausius Inequality
-</h3>
+</div>
+<div id="clausius-inequality" class="section level3">
+<h3>Clausius Inequality</h3>
 <ul>
 <li>
 The second law can be summed up in simple mathematical expression called
@@ -866,9 +866,10 @@ We can also write this as <span class="math display">\[ \oint
 </li>
 </ul>
 <hr />
-<h2>
-Entropy and Disorder
-</h2>
+</div>
+</div>
+<div id="entropy-and-disorder" class="section level2">
+<h2>Entropy and Disorder</h2>
 <div style="width: 100%; overflow: hidden;">
 <div style="width: 75%; float: left;">
 <ul>
@@ -892,16 +893,16 @@ the system
 </div>
 </div>
 <p><span class="math inline">\(\;\)</span></p>
-<div class="whitebox">
-<h3>
-Example 5.6
-</h3>
+<div id="example-5.6" class="section level3 whitebox">
+<h3>Example 5.6</h3>
 <p>
 Calculate the entropy of a carbon monoxide crystal, containing <span
 class="math inline">\(1.00 mol\)</span> of <span
-class="math inline">\(\chem{CO}\)</span>, and assuming that the
-molecules are randomly oriented in one of two equivalent orientations.
+class="math inline">\({CO}\)</span>, and assuming that the molecules are
+randomly oriented in one of two equivalent orientations.
 </p>
+</div>
+<p></font></p>
 </div>
 
 

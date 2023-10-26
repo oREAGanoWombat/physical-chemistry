@@ -3,23 +3,27 @@ title: "<center>Second Law of Thermodynamics</center>"
 output: html_document
 ---
 
+<font size="4">
+
 ---
 
 <ul>
 <li>Rudolph Causius wrote in "The Mechanical Theory of Heat" (1879) that
-<blockquote><font size="5"><p>The fundamental laws of the universe which correspond to the two fundamental theorems of the mechanical theory of heat:</p> <p>1. The energy of the universe is constant.</p><p>2. The entropy of the universe tends to a maximum.</p></font></blockquote>
+<blockquote><font size="3"><i><p>The fundamental laws of the universe which correspond to the two fundamental theorems of the mechanical theory of heat:</p> <p>1. The energy of the universe is constant.</p><p>2. The entropy of the universe tends to a maximum.</p></i></font></blockquote>
 </li>
 </ul>
 
 ---
 
-<h3>The Second Law is Still Studied</h3>
+### The Second Law is Still Studied
+
 <p>In a 2010 interview, Sean M. Carroll from CalTech said</p>
-<blockquote><font size="5"><p>I’m trying to understand how time works. And that’s a huge question that has lots of different aspects to it. A lot of them go back to Einstein and spacetime and how we measure time using clocks. But the particular aspect of time that I’m interested in is the arrow of time: the fact that the past is different from the future. We remember the past but we don’t remember the future. There are irreversible processes. There are things that happen, like you turn an egg into an omelet, but you can’t turn an omelet into an egg.</p></font></blockquote>
+<blockquote><font size="3"><i><p>I’m trying to understand how time works. And that’s a huge question that has lots of different aspects to it. A lot of them go back to Einstein and spacetime and how we measure time using clocks. But the particular aspect of time that I’m interested in is the arrow of time: the fact that the past is different from the future. We remember the past but we don’t remember the future. <b>There are irreversible processes. There are things that happen, like you turn an egg into an omelet, but you can’t turn an omelet into an egg.</b></p></i></font></blockquote>
 
 ---
 
-<h2>Heat Engines and the Carnot Cycle</h2>
+## Heat Engines and the Carnot Cycle
+
 <h3>Sadi Carnot (1796-1832)</h3>
 <div style="width: 100%; overflow: hidden;">
 <div style="width: 75%; float: left;">
@@ -36,18 +40,20 @@ output: html_document
 
 $\;$
 
-<h3>A Heat Engine</h3>
+### A Heat Engine
+
 <p><img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/HeatEngine.png alt="A heat engine takes in heat and converts it to work."></p>
 <ul>
 <li>Nature prevents the complete conversion of energy into work</li>
 <li>Leads to an important statement of <bold>The Second Law of Thermodynamics</bold>
-<blockquote><font size="5">It is impossible to convert heat into an equivalent amount of work without some other changes occurring in the universe.</font></blockquote>
+<blockquote><font size="3"><i>It is impossible to convert heat into an equivalent amount of work without some other changes occurring in the universe.</i></font></blockquote>
 </li>
 </ul>
 
 $\;$
 
-<h3>A More Realistic Heat Engine</h3>
+### A More Realistic Heat Engine
+
 <p><img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/MoreRealisticHeatEngine.png alt="A heat engine takes in heat and converts it to work with the loss of some heat."></p>
 <ul>
 <li>The fraction of the heat provided to the engine to the amount of work the engine produces defines the efficiency of the engine.</li>
@@ -55,7 +61,8 @@ $\;$
 
 $\;$
 
-<h3>The Carnot Engine</h3>
+### The Carnot Engine
+
 <p><img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/CarnotEngine.png alt="A heat engine takes in heat and converts it to work with the loss of some heat. Input heat is drawn from a hot reservoir while the lost heat is dumped into a cold reservoir."></p>
 <ul>
 <li>A Carnot engine draws heat from a hot resevoir converts it to work and heat, the output heat is dumping into the cold resevoir.</li>
@@ -63,7 +70,8 @@ $\;$
 
 ---
 
-<h3>The Carnot Cycle</h3>
+### The Carnot Cycle
+
 <ul>
 <li>The Carnot Cycle is the cycle of steps that the engine undergoes in order to draw in heat and convert it to work in the Carnot engine.</li>
 <li>The steps of the Carnot Cycle are:
@@ -79,14 +87,15 @@ $\;$
 $\;$
 
 ::: {.whitebox data-latex=""}
-<h3>Plot of Carnot Cycle</h3>\
+### Plot of Carnot Cycle
 
 <p><img src=https://shaunmwilliams.com/CHE303/figures/TheSecondLaw/PlotOfCarnotCycle.png alt="A plot of the Carnot Cycle in terms of pressure versus molar volume."></p>
 :::
 
 ---
 
-<h3>Anaylsis of the Carnot Cycle</h3>
+### Anaylsis of the Carnot Cycle
+
 <ul>
 <li>The cycle is closed (ending state and initial state are equal)</li>
 <li>This means that any state function must have no net change</li>
@@ -126,7 +135,8 @@ $\;$
 
 ---
 
-<h3>Simplification</h3>
+### Simplification
+
 <ul>
 <li>When we studied the first law of thermodynamics we learned that
 \[ \left( \frac{V_2}{V_1} \right) = \left( \frac{T_2}{T_1} \right)^{-\frac{C_V}{R}} \Rightarrow \left( \frac{V_2}{V_1} \right) = \left( \frac{T_1}{T_2} \right)^{\frac{C_V}{R}} \]
@@ -150,14 +160,15 @@ and step 4 can be rearranged to
 $\;$
 
 ::: {.whitebox data-latex=""}
-<h3>Example 5.1</h3>
+### Example 5.1
         
 <p>What is the maximum efficiency of a freezer set to keep ice cream at a cool \(-10^\circ C\), which it is operating in a room that is \(25^\circ C\)? What is the minimum amount of energy needed to remove \(1.0 J\) from the freezer and dissipate it into the room?</p>
 :::
 
 ---
 
-<h2>Entropy</h2>
+## Entropy
+
 <h3>Total Heat Transfered</h3>
 <ul>
 <li>In the Carnot cycle the total heat transfered is
@@ -171,7 +182,7 @@ $\;$
 $\;$
 
 ::: {.graybox data-latex=""}
-<h3>Analysis of Total Heat Transfered</h3>
+### Analysis of Total Heat Transfered
 
 <p>\[ q_{tot}=nRT_h\ln\left(\frac{V_2}{V_1}\right)-nRT_c\ln\left(\frac{V_2}{V_1}\right) \]</p>
 <ul>
@@ -186,7 +197,8 @@ $\;$
 
 $\;$
 
-<h3>A New State Function - Entropy</h3>
+### A New State Function - Entropy
+
 <p>
 \[ \sum_i \frac{q_i}{T_i} = \frac{nRT_h\ln\left(\frac{V_2}{V_1}\right)}{T_h} - \frac{nRT_c\ln\left(\frac{V_2}{V_1}\right)}{T_c}=0 \]
 </p>
@@ -200,7 +212,8 @@ $\;$
 
 ---
 
-<h2>Calculating Entropy Changes</h2>
+## Calculating Entropy Changes
+
 <h3><a href=isothermal-expansion.html>Isothermal Changes</a></h3>
 <p>
 Consider an isothermal expansion of an ideal gas from \(V_1\) to \(V_2\)
@@ -214,7 +227,7 @@ dq &=& \frac{nRT}{V}dV \\
 $\;$
 
 ::: {.whitebox data-latex=""}
-<h3>Example 5.2</h3>
+### Example 5.2
         
 <p>Calculate the entropy change for \(1.00 mol\) of an ideal gas expanding isothermally from a volume of \(24.4 L\) to \(48.8 L\).</p>
 :::
@@ -249,7 +262,7 @@ so
 
 $\;$
 
-<h3><a href=adiabatic-expansion.html>Adiabatic Changes</a></h3>
+<h3><a href=adiabatic-pathways.html>Adiabatic Changes</a></h3>
 <ul>
 <li>In adiabatic changes \(dq=0\). Therefore, in adiabatic changes
 \[ dS=\frac{dq}{T}=0 \]
@@ -259,7 +272,8 @@ $\;$
 
 $\;$
 
-<h3>Phase Changes</h3>
+### Phase Changes
+
 <ul>
 <li>We experience a lot of phase changes in chemistry</li>
 <li>The common phase changes that we experience occur open to our atmosphere</li>
@@ -272,17 +286,17 @@ $\;$
 $\;$
 
 ::: {.whitebox data-latex=""}
-<h3>Example 5.3</h3>
+### Example 5.3
 
 <p>The enthalpy of fusion for water is \(6.01 \frac{kJ}{mol}\). Calculate the entropy change for \(1.0 mole\) of ice melting to form liquid at \(273 K\).</p>
 :::
 
 ---
 
-<h2>Comparing the System and the Surroundings</h2>
+## Comparing the System and the Surroundings
 
 ::: {.whitebox data-latex=""}
-<h3>Example 5.4</h3>
+### Example 5.4
 
 <p>Consider \(18.02 g\) (\(1.00 mol\)) of ice melting at \(273 K\) in a room that is \(298 K\). Calculate \(\Delta S\) for the ice, the surrounding room, and of the universe. (\(\Delta H_{fus} = 6.01 \frac{kJ}{mol}\))</p>
 :::
@@ -290,14 +304,15 @@ $\;$
 $\;$
 
 ::: {.whitebox data-latex=""}
-<h3>Example 5.5</h3>
+### Example 5.5
 
 <p>A \(10.0 g\) piece of metal (\(C = 0.250 \frac{J}{g\,^\circ C}\)) initially at \(95^\circ C\) is placed in \(25.0 g\) of water initially at \(15^\circ C\) in an insulated container. Calculate the final temperature of the metal and water once the system has reached thermal equilibrium. Also, calculate the entropy change for the metal, the water, and the entire system.</p>
 :::
 
 ---
 
-<h3>A New Way to State the 2<sup>nd</sup> Law</h3>
+### A New Way to State the 2<sup>nd</sup> Law
+
 <ul>
 <li>We know that
 \[ \Delta S_{univ} = \Delta S_{sys} + \Delta S_{surr} \]
@@ -311,7 +326,8 @@ $\;$
 
 ---
 
-<h3>Clausius Inequality</h3>
+### Clausius Inequality
+
 <ul>
 <li>The second law can be summed up in  simple mathematical expression called the Clausius Inequality
 \[ \Delta S_{sys} \le 0 \]
@@ -324,7 +340,8 @@ which must be true for any spontaneous process
 
 ---
 
-<h2>Entropy and Disorder</h2>
+## Entropy and Disorder
+
 <div style="width: 100%; overflow: hidden;">
 <div style="width: 75%; float: left;">
 <ul>
@@ -344,7 +361,9 @@ where \(W\) is the total number of microstates for the system
 $\;$
 
 ::: {.whitebox data-latex=""}
-<h3>Example 5.6</h3>
+### Example 5.6
 
-<p>Calculate the entropy of a carbon monoxide crystal, containing \(1.00 mol\) of \(\chem{CO}\), and assuming that the molecules are randomly oriented in one of two equivalent orientations.</p>
+<p>Calculate the entropy of a carbon monoxide crystal, containing \(1.00 mol\) of \({CO}\), and assuming that the molecules are randomly oriented in one of two equivalent orientations.</p>
 :::
+
+</font>
